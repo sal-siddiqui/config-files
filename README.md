@@ -1,4 +1,4 @@
-# config_files
+# config-files
 
 ## 📝 Project Overview
 
