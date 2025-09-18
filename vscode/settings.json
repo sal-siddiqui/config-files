@@ -1,5 +1,7 @@
 {
-  // -- Workbench, Editor, Explorer, Terminal
+  // THEME & APPEARANCE (Extensions: Everforest by Sainnhe & Material Icon Theme by Philipp Kief)
+  "workbench.colorTheme": "Everforest Dark",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
     "[Everforest Dark]": {
       "scrollbar.shadow": "#2d353b",
@@ -13,12 +15,23 @@
     "[Everforest Dark]": {}
   },
 
-  "workbench.colorTheme": "Everforest Dark",
-  "workbench.iconTheme": "material-icon-theme",
+  // WORKBENCH
+  "workbench.sideBar.location": "right",
+  "workbench.activityBar.location": "hidden",
+  "workbench.statusBar.visible": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.tree.indent": 20,
+  "workbench.editor.enablePreview": false,
+  "workbench.tips.enabled": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+
+  // EDITOR (Extension: Prettier - Code Formatter by Prettier)
   "editor.fontFamily": "Consolas",
   "editor.fontSize": 15,
   "editor.lineHeight": 2.0,
-  "editor.wordWrapColumn": 120,
+  "editor.wordWrapColumn": 100,
   "editor.wordWrap": "bounded",
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "none",
@@ -36,38 +49,18 @@
     "source.organizeImports": "explicit"
   },
 
-  "workbench.sideBar.location": "right",
-  "workbench.activityBar.location": "hidden",
-  "workbench.statusBar.visible": false,
-  "workbench.layoutControl.enabled": false,
-  "workbench.startupEditor": "none",
-  "workbench.tree.renderIndentGuides": "none",
-  "workbench.tree.indent": 20,
-  "workbench.editor.enablePreview": false,
-  "workbench.tips.enabled": false,
-
+  // TERMINAL
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.lineHeight": 1.5,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.tabs.enabled": false,
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
 
+  // EXPLORER & FILES
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
-
-  "material-icon-theme.folders.theme": "classic",
-  "material-icon-theme.hidesExplorerArrows": true,
-
-  "window.menuBarVisibility": "toggle",
-  "window.commandCenter": false,
-
-  "zenMode.centerLayout": false,
-  "zenMode.hideLineNumbers": false,
-
-  "breadcrumbs.enabled": false,
-  "chat.commandCenter.enabled": false,
   "files.dialog.defaultPath": "C:\\Users\\salma\\Documents",
-
   "files.exclude": {
     "**/.git": true,
     ".vscode": true,
@@ -75,70 +68,87 @@
     "*.egg-info": true
   },
 
-  // -- Version Control
+  // WINDOW & UI
+  "window.menuBarVisibility": "toggle",
+  "window.commandCenter": false,
+  "breadcrumbs.enabled": false,
+  "zenMode.centerLayout": false,
+  "zenMode.hideLineNumbers": false,
+  "chat.commandCenter.enabled": false,
+  "chat.agent.enabled": false,
+
+  // ICON THEME (Material Icons)
+  "material-icon-theme.folders.theme": "classic",
+  "material-icon-theme.hidesExplorerArrows": true,
+
+  // VERSION CONTROL
   "git.decorations.enabled": false,
   "scm.diffDecorations": "none",
 
-  // -- HTML, Jinja
+  // HTML, JINJA, DJANGO (Extension: Highlight Matching Tag by Vincaslt & HTML Eng Tag Labels by Ante Primorac & Jinja by Wholroyd & Jinja Snippets by Noxiz)
   "[html][jinja-html][django-html]": {
     "editor.defaultFormatter": "monosans.djlint"
   },
 
-  // -- Java
-  "java.completion.guessMethodArguments": "insertBestGuessedArguments",
-  "java.inlayHints.parameterNames.enabled": "none",
-  "java.cleanup.actions": [
-    "qualifyMembers",
-    "qualifyStaticMembers",
-    "addOverride",
-    "addDeprecated",
-    "stringConcatToTextBlock",
-    "invertEquals",
-    "addFinalModifier",
-    "instanceofPatternMatch",
-    "lambdaExpressionFromAnonymousClass",
-    "switchExpression",
-    "tryWithResource",
-    "lambdaExpression",
-    "renameUnusedLocalVariables",
-    "useSwitchForInstanceofPattern",
-    "renameFileToType"
-  ],
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
+  // JAVA (Extension: XML by Red Hat & Spring Boot Extension Pack by VMware & Languager Support for Java by Red Hat & Extension Pack for Java by Microsoft)
+  // "java.completion.guessMethodArguments": "insertBestGuessedArguments",
+  // "java.inlayHints.parameterNames.enabled": "none",
+  // "java.cleanup.actions": [
+  //   "qualifyMembers",
+  //   "qualifyStaticMembers",
+  //   "addOverride",
+  //   "addDeprecated",
+  //   "stringConcatToTextBlock",
+  //   "invertEquals",
+  //   "addFinalModifier",
+  //   "instanceofPatternMatch",
+  //   "lambdaExpressionFromAnonymousClass",
+  //   "switchExpression",
+  //   "tryWithResource",
+  //   "lambdaExpression",
+  //   "renameUnusedLocalVariables",
+  //   "useSwitchForInstanceofPattern",
+  //   "renameFileToType"
+  // ],
+  // "[java]": {
+  //   "editor.defaultFormatter": "redhat.java"
+  // },
 
-  // -- Python
+  // PYTHON (Extensions: Python by Microsoft & Ruff by Astral Software)
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.codeActionsOnSave": {
       "source.fixAll": "never"
     }
   },
+  "ruff.interpreter": [
+    "C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\ruff\\Scripts\\python.exe"
+  ],
 
-  // -- JavaScript & TypeScript
+  // JAVASCRIPT & TYPESCRIPT
   "javascript.preferences.importModuleSpecifierEnding": "js",
   "typescript.preferences.importModuleSpecifierEnding": "js",
 
-  // -- TOML
+  // TOML (Extension: Even Better TOML by Tamsafe)
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
 
-  // -- Error Lens Extension
+  // EXTENSIONS - Error Lens by Alexander
   "errorLens.fontStyleItalic": true,
   "errorLens.messageBackgroundMode": "none",
 
-  // -- Code Runner Extension
+  // EXTENSIONS - Code Runner by Jun Han
   "code-runner.runInTerminal": true,
   "code-runner.showExecutionMessage": false,
   "code-runner.ignoreSelection": true,
   "code-runner.saveFileBeforeRun": true,
   "code-runner.executorMap": {
     // "<language>": "<commands>"
+    "python": "clear; echo \"> Running '$fileName' \"; uv run $fullFileName"
   },
 
-  // -- Djlint Extension
+  // EXTENSIONS - Djlint by Monosans
   "djlint.configuration": "C:\\Users\\salma\\AppData\\Roaming\\djlint\\djlint.toml",
   "djlint.useVenv": false,
   "djlint.pythonPath": "C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\djlint\\Scripts\\python.exe"
