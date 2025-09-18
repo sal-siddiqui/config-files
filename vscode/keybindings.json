@@ -1,11 +1,6 @@
 // Place your key bindings in this file to override the defaults
 [
-  // Run code runner
-  {
-    "key": "shift+enter",
-    "command": "code-runner.run"
-  },
-
+  // EDITOR ACTIONS
   // Toggle block comment
   {
     "key": "ctrl+shift+/",
@@ -29,14 +24,14 @@
 
   // Accept selected suggestion
   {
-    "key": "ctrl+numpad2",
+    "key": "ctrl+numpad3",
     "command": "acceptSelectedCodeAction",
     "when": "codeActionMenuVisible"
   },
 
   // Move to next suggestion
   {
-    "key": "ctrl+numpad3",
+    "key": "ctrl+numpad2",
     "command": "selectNextCodeAction",
     "when": "codeActionMenuVisible"
   },
@@ -48,6 +43,7 @@
     "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused"
   },
 
+  // TERMINAL
   // New Terminal
   {
     "key": "ctrl+t",
@@ -62,9 +58,31 @@
     "when": "terminalFocus"
   },
 
-  // Create New File or Folder
+  // FILES & EXPLORER
+  // Open AWS Explorer (Extensions: AWS CLI Configure by Mark Tucker & AWS Toolkit by AWS)
   {
-    "key": "ctrl+n",
-    "command": "extension.advancedNewFile"
+    "key": "ctrl+shift+e",
+    "command": "aws.explorer.focus"
+  },
+
+  // Open Explorer
+  {
+    "key": "ctrl+e",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+
+  // Remove default Explorer binding
+  {
+    "key": "ctrl+shift+e",
+    "command": "-workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+
+  // EXTENSIONS
+  // Run code runner
+  {
+    "key": "shift+enter",
+    "command": "code-runner.run"
   }
 ]
