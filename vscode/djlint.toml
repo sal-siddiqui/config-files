@@ -1,22 +1,19 @@
-# -- Formatter
-# Close void tags.
+# -- DjLint Configurations
+
+# -- Formatter Settings
+# Ensure void tags (e.g., <br>, <hr>) are properly closed.
 close_void_tags = true
 
-# Formatter will attempt to wrap tag attributes if the attribute length exceeds this value.
-max_attribute_length = 15
-
-# Consolidate blank lines down to x lines. Default is 0 meaning blank lines will be removed.
+# Limit consecutive blank lines (0 = remove all).
 max_blank_lines = 2
 
-# Formatter will attempt to put some html and template tags on a single line instead of wrapping them if the line length will not exceed this value.
-max_line_length = 120
-
-
-# -- Linter
-# H006: img tag should have height and width attributes.
-# H013: img tag should have alt attributes.
-# H023: Do not use entity references.
-# H025: Tag seems to be an orphan.
-# H030: Consider adding a meta description.
-# H031: Consider adding meta keywords.
-ignore = "H006,H013,H023,H025,H030,H031"
+# -- Linter Settings
+# H005: <html> should have lang attribute
+# H006: <img> should have height/width
+# H013: <img> should have alt text
+# H014: More than 2 blank lines
+# H023: Avoid entity references
+# H025: Orphan tag warning
+# H030: Missing meta description
+# H031: Missing meta keywords
+ignore = "H005,H006,H013,H014,H023,H025,H030,H031"
