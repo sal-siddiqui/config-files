@@ -44,6 +44,8 @@
   "editor.foldingHighlight": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "editor.tabSize": 4,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
