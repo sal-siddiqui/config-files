@@ -22,7 +22,7 @@ build_prompt() {
     local branch_section=""
     
     [[ -n "$venv" ]] && venv_section="\[\e[36m\]$venv\[\e[0m\] "
-    [[ -n "$branch" ]] && branch_section="\[\e[33m\]$branch\[\e[0m\] "
+    [[ -n "$branch" ]] && branch_section="\[\e[33m\][$branch]\[\e[0m\] "
     
     echo "${venv_section}${branch_section}\[\e[1;34m\]\W\[\e[0m\]\n\[\e[1;37m\]\\$\[\e[0m\] "
 }
