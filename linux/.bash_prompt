@@ -1,24 +1,31 @@
-# Function to get the current Git branch (if any)
+# Function to get the current Git branch
 get_git_branch() {
-  git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git branch --show-current 2>/dev/null || echo ""
+    git branch --show-current 2>/dev/null || return
 }
 
-# Function to build the PS1 prompt dynamically
+# Function to get the current Python virtual environment
+get_venv() {
+    [[ -n "$VIRTUAL_ENV" ]] || return
+    
+    if [[ -n "$VIRTUAL_ENV_PROMPT" ]]; then
+        echo "($VIRTUAL_ENV_PROMPT)"
+    else
+        echo "($(basename "$VIRTUAL_ENV"))"
+    fi
+}
+
 build_prompt() {
-  local user="\[\e[1;32m\]\u\[\e[0m\]"                      # User in green/purple
-  local host="\[\e[1;35m\]\h\[\e[0m\]"                      # Host in purple
-  local dir="\[\e[1;34m\]\W\[\e[0m\]"                       # Current directory in blue
-  local branch="$(get_git_branch)"                          # Get the current Git branch
-  local branch_display=""
-
-  # If a Git branch is present, display it in square brackets (yellow, non-bold)
-  if [[ -n "$branch" ]]; then
-    branch_display="\[\e[33m\][$branch]\[\e[0m\]"
-  fi
-
-  # Build the final PS1 prompt
-  echo "\n${user} at ${host} in ${dir} ${branch_display}\n\[\e[1;37m\]\\$\[\e[0m\] "
+    local venv=$(get_venv)
+    local branch=$(get_git_branch)
+    
+    local venv_section=""
+    local branch_section=""
+    
+    [[ -n "$venv" ]] && venv_section="\[\e[36m\]$venv\[\e[0m\] "
+    [[ -n "$branch" ]] && branch_section="\[\e[33m\]$branch\[\e[0m\] "
+    
+    echo "${venv_section}${branch_section}\[\e[1;34m\]\W\[\e[0m\] \[\e[1;37m\]\\$\[\e[0m\] "
 }
 
-# Set PROMPT_COMMAND to update the PS1 dynamically
+# Set dynamic prompt
 PROMPT_COMMAND='PS1="$(build_prompt)"'
