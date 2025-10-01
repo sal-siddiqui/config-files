@@ -28,4 +28,4 @@ build_prompt() {
 }
 
 # Set dynamic prompt
-PROMPT_COMMAND='PS1="\n $(build_prompt)"'
+PROMPT_COMMAND='PS1="\n$(build_prompt)"'
