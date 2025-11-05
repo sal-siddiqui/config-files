@@ -4,11 +4,12 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
     "[Everforest Dark]": {
-      "scrollbar.shadow": "#2d353b",
+      "scrollbar.shadow": "#00000000",
+      "panel.border": "#00000000",
+      "sideBar.border": "#00000000",
+      "editorHoverWidget.border": "#00000000",
       "panel.background": "#272e33",
-      "sideBar.background": "#272e33",
-      "panel.border": "#272e33",
-      "sideBar.border": "#272e33"
+      "sideBar.background": "#272e33"
     }
   },
   "editor.tokenColorCustomizations": {
