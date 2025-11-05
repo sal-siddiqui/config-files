@@ -57,7 +57,7 @@
   "terminal.integrated.lineHeight": 1.5,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.tabs.enabled": false,
-  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
 
   // EXPLORER & FILES
   "explorer.confirmDelete": false,
@@ -135,6 +135,11 @@
   // TOML (Extension: Even Better TOML by Tamsafe)
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+
+  // ENV Files
+  "files.associations": {
+    "*.env": "properties"
   },
 
   // EXTENSIONS - Error Lens by Alexander
