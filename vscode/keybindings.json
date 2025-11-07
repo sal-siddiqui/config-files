@@ -1,88 +1,16 @@
 // Place your key bindings in this file to override the defaults
 [
-  // EDITOR ACTIONS
+  // Execute code runner
+  // Extensions: Code Runner by Jun Han
+  {
+    "key": "shift+enter",
+    "command": "code-runner.run"
+  },
+
   // Toggle block comment
   {
     "key": "ctrl+shift+/",
     "command": "editor.action.blockComment",
     "when": "editorTextFocus && !editorReadonly"
-  },
-
-  // Go to error, warning, info, etc.
-  {
-    "key": "ctrl+numpad1",
-    "command": "editor.action.marker.next",
-    "when": "editorFocus"
-  },
-
-  // Show quick fix suggestions
-  {
-    "key": "ctrl+numpad2",
-    "command": "editor.action.quickFix",
-    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
-  },
-
-  // Accept selected suggestion
-  {
-    "key": "ctrl+numpad3",
-    "command": "acceptSelectedCodeAction",
-    "when": "codeActionMenuVisible"
-  },
-
-  // Move to next suggestion
-  {
-    "key": "ctrl+numpad2",
-    "command": "selectNextCodeAction",
-    "when": "codeActionMenuVisible"
-  },
-
-  // Remove Copilot generate binding
-  {
-    "key": "ctrl+enter",
-    "command": "-github.copilot.generate",
-    "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused"
-  },
-
-  // TERMINAL
-  // New Terminal
-  {
-    "key": "ctrl+t",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalFocus"
-  },
-
-  // Delete Terminal
-  {
-    "key": "ctrl+w",
-    "command": "workbench.action.terminal.kill",
-    "when": "terminalFocus"
-  },
-
-  // FILES & EXPLORER
-  // Open AWS Explorer (Extensions: AWS CLI Configure by Mark Tucker & AWS Toolkit by AWS)
-  {
-    "key": "ctrl+shift+e",
-    "command": "aws.explorer.focus"
-  },
-
-  // Open Explorer
-  {
-    "key": "ctrl+e",
-    "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
-  },
-
-  // Remove default Explorer binding
-  {
-    "key": "ctrl+shift+e",
-    "command": "-workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
-  },
-
-  // EXTENSIONS
-  // Run code runner
-  {
-    "key": "shift+enter",
-    "command": "code-runner.run"
   }
 ]
