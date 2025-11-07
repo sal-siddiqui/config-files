@@ -50,6 +50,9 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
   },
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.roundedSelection": false,
+  "editor.smoothScrolling": true,
 
   // TERMINAL
   "terminal.integrated.fontSize": 15,
@@ -91,30 +94,6 @@
   "[html][jinja-html][django-html]": {
     "editor.defaultFormatter": "monosans.djlint"
   },
-
-  // JAVA (Extension: XML by Red Hat & Spring Boot Extension Pack by VMware & Languager Support for Java by Red Hat & Extension Pack for Java by Microsoft)
-  // "java.completion.guessMethodArguments": "insertBestGuessedArguments",
-  // "java.inlayHints.parameterNames.enabled": "none",
-  // "java.cleanup.actions": [
-  //   "qualifyMembers",
-  //   "qualifyStaticMembers",
-  //   "addOverride",
-  //   "addDeprecated",
-  //   "stringConcatToTextBlock",
-  //   "invertEquals",
-  //   "addFinalModifier",
-  //   "instanceofPatternMatch",
-  //   "lambdaExpressionFromAnonymousClass",
-  //   "switchExpression",
-  //   "tryWithResource",
-  //   "lambdaExpression",
-  //   "renameUnusedLocalVariables",
-  //   "useSwitchForInstanceofPattern",
-  //   "renameFileToType"
-  // ],
-  // "[java]": {
-  //   "editor.defaultFormatter": "redhat.java"
-  // },
 
   // PYTHON (Extensions: Python by Microsoft & Ruff by Astral Software)
   "[python]": {
