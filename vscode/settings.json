@@ -53,6 +53,7 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.roundedSelection": false,
   "editor.smoothScrolling": true,
+  "editor.mouseWheelScrollSensitivity": 2.5,
 
   // TERMINAL
   "terminal.integrated.fontSize": 15,
@@ -120,7 +121,7 @@
 
   // File Associations
   "files.associations": {
-    ".env.*": "properties"
+    "*.env": "properties"
   },
 
   // EXTENSIONS - Error Lens by Alexander
@@ -134,7 +135,7 @@
   "code-runner.saveFileBeforeRun": true,
   "code-runner.executorMap": {
     // "<language>": "<commands>"
-    "python": "clear; echo \"> Running '$fileName' \"; uv run $fullFileName"
+    "python": "clear; uv run $fullFileName"
   },
 
   // EXTENSIONS - Djlint by Monosans
