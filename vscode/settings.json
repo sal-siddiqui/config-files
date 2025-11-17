@@ -1,19 +1,27 @@
 {
-  // THEME & APPEARANCE (Extensions: Everforest by Sainnhe & Material Icon Theme by Philipp Kief)
+  // THEME & APPEARANCE
+  /* Extensions
+  - Everforest by Sainnhe
+  - Material Icon Theme by Philipp Kief 
+  */
   "workbench.colorTheme": "Everforest Dark",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
     "[Everforest Dark]": {
-      "scrollbar.shadow": "#00000000",
-      "panel.border": "#00000000",
-      "sideBar.border": "#00000000",
-      "editorHoverWidget.border": "#00000000",
+      "scrollbar.shadow": "#0000",
+      "panel.border": "#0000",
+      "sideBar.border": "#0000",
+      "editorHoverWidget.border": "#0000",
       "panel.background": "#272e33",
       "sideBar.background": "#272e33"
     }
   },
   "editor.tokenColorCustomizations": {
     "[Everforest Dark]": {}
+  },
+  "files.associations": {},
+  "material-icon-theme.files.associations": {
+    "test.py": "shellscript"
   },
 
   // WORKBENCH
@@ -28,7 +36,7 @@
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.tree.enableStickyScroll": false,
 
-  // EDITOR (Extension: Prettier - Code Formatter by Prettier)
+  // EDITOR
   "editor.fontFamily": "Consolas",
   "editor.fontSize": 15,
   "editor.lineHeight": 2.0,
@@ -37,19 +45,13 @@
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "none",
   "editor.stickyScroll.enabled": false,
-  "editor.renderLineHighlight": "none",
+  "editor.renderLineHighlight": "gutter",
   "editor.selectionHighlight": false,
   "editor.guides.indentation": false,
   "editor.lightbulb.enabled": "off",
   "editor.occurrencesHighlight": "off",
   "editor.foldingHighlight": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
   "editor.detectIndentation": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.organizeImports": "explicit"
-  },
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.roundedSelection": false,
   "editor.smoothScrolling": true,
@@ -69,12 +71,8 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
   "files.dialog.defaultPath": "C:\\Users\\salma\\Documents",
-  "files.exclude": {
-    "**/.git": true,
-    ".vscode": true,
-    "**/__pycache__": true,
-    "*.egg-info": true
-  },
+  "material-icon-theme.folders.theme": "classic",
+  "material-icon-theme.hidesExplorerArrows": true,
 
   // WINDOW & UI
   "window.menuBarVisibility": "toggle",
@@ -86,49 +84,18 @@
   "chat.agent.enabled": false,
   //   "window.zoomLevel": 0,
 
-  // ICON THEME (Material Icons)
-  "material-icon-theme.folders.theme": "classic",
-  "material-icon-theme.hidesExplorerArrows": true,
-
   // VERSION CONTROL
   "git.decorations.enabled": false,
   "scm.diffDecorations": "none",
 
-  // HTML, JINJA, DJANGO (Extension: Highlight Matching Tag by Vincaslt & HTML Eng Tag Labels by Ante Primorac & Jinja by Wholroyd & Jinja Snippets by Noxiz)
-  "[html][jinja-html][django-html]": {
-    "editor.defaultFormatter": "monosans.djlint"
-  },
-
-  // PYTHON (Extensions: Python by Microsoft & Ruff by Astral Software)
-  "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.codeActionsOnSave": {
-      "source.fixAll": "never"
-    }
-  },
-  "ruff.interpreter": [
-    "C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\ruff\\Scripts\\python.exe"
-  ],
-
-  // JAVASCRIPT & TYPESCRIPT
-  "javascript.preferences.importModuleSpecifierEnding": "js",
-  "typescript.preferences.importModuleSpecifierEnding": "js",
-
-  // TOML (Extension: Even Better TOML by Tamsafe)
-  "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml"
-  },
-
-  // File Associations
-  "files.associations": {
-    "*.env": "properties"
-  },
-
-  // EXTENSIONS - Error Lens by Alexander
+  // EXTENSIONS
+  /* 
+  - Error Lens by Alexander
+  - Code Runner by Jun Han
+   */
   "errorLens.fontStyleItalic": true,
   "errorLens.messageBackgroundMode": "none",
 
-  // EXTENSIONS - Code Runner by Jun Han
   "code-runner.runInTerminal": true,
   "code-runner.showExecutionMessage": false,
   "code-runner.ignoreSelection": true,
@@ -138,8 +105,65 @@
     "python": "clear; uv run $fullFileName"
   },
 
-  // EXTENSIONS - Djlint by Monosans
+  // PYTHON
+  /* Extensions
+  - Python by Microsoft
+  - Ruff by Astral Software
+  */
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "never",
+      "source.organizeImports": "always"
+    }
+  },
+  "ruff.interpreter": [
+    "C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\ruff\\Scripts\\python.exe"
+  ],
+
+  // HTML & JINJA
+  /* Extensions
+  - Highlight Matching Tag by Vincaslt
+  - HTML Eng Tag Labels by Ante Primorac
+  - Jinja by Wholroyd
+  - Jinja Snippets by Noxiz
+  - Djlint by Monosans
+  */
+  "[html]": {
+    "editor.defaultFormatter": "monosans.djlint",
+    "editor.formatOnSave": true
+  },
   "djlint.configuration": "C:\\Users\\salma\\AppData\\Roaming\\djlint\\djlint.toml",
   "djlint.useVenv": false,
-  "djlint.pythonPath": "C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\djlint\\Scripts\\python.exe"
+  "djlint.pythonPath": "C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\djlint\\Scripts\\python.exe",
+
+  // TOML
+  /* Extensions
+  - Even Better TOML by Tamsafe
+  */
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+
+  // JSON
+  /* Extensions
+  - Prettier - Code Formatter by Prettier
+  */
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  // BASH
+  /* Extensions:
+  - ShellCheck by Timon Wong
+  - shell-format by foxundermoon
+  - shellman by Remisa
+  - shfmt (https://webinstall.dev/shfmt/)
+  */
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt",
+    "editor.formatOnSave": true
+  }
 }
