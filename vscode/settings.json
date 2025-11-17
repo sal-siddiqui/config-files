@@ -19,7 +19,9 @@
   "editor.tokenColorCustomizations": {
     "[Everforest Dark]": {}
   },
-  "files.associations": {},
+  "files.associations": {
+    "*.env": "properties"
+  },
   "material-icon-theme.files.associations": {},
 
   // WORKBENCH
