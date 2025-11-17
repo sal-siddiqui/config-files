@@ -20,9 +20,7 @@
     "[Everforest Dark]": {}
   },
   "files.associations": {},
-  "material-icon-theme.files.associations": {
-    "test.py": "shellscript"
-  },
+  "material-icon-theme.files.associations": {},
 
   // WORKBENCH
   "workbench.sideBar.location": "right",
