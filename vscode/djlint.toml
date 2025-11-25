@@ -1,11 +1,9 @@
-# -- DjLint Configurations
-
 # -- Formatter Settings
 # Ensure void tags (e.g., <br>, <hr>) are properly closed.
 close_void_tags = true
 
 # Limit consecutive blank lines (0 = remove all).
-max_blank_lines = 2
+max_blank_lines = 1
 
 # -- Linter Settings
 # H005: <html> should have lang attribute
