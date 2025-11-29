@@ -1,9 +1,8 @@
 {
-  // THEME & APPEARANCE
-  /* Extensions
-  - Everforest by Sainnhe
-  - Material Icon Theme by Philipp Kief 
-  */
+  // Theme & Appearance
+  // Extensions:
+  // sainnhe.everforest
+  // PKief.material-icon-theme
   "workbench.colorTheme": "Everforest Dark",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
@@ -16,15 +15,11 @@
       "sideBar.background": "#272e33"
     }
   },
-  "editor.tokenColorCustomizations": {
+  /* "editor.tokenColorCustomizations": {
     "[Everforest Dark]": {}
-  },
-  "files.associations": {
-    "*.env": "properties"
-  },
-  "material-icon-theme.files.associations": {},
+  }, */
 
-  // WORKBENCH
+  // Workbench
   "workbench.sideBar.location": "right",
   "workbench.activityBar.location": "hidden",
   "workbench.statusBar.visible": false,
@@ -36,12 +31,12 @@
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.tree.enableStickyScroll": false,
 
-  // EDITOR
+  // Editor
   "editor.fontFamily": "Consolas",
   "editor.fontSize": 15,
   "editor.lineHeight": 2.0,
   "editor.wordWrapColumn": 100,
-  "editor.wordWrap": "bounded",
+  "editor.wordWrap": "wordWrapColumn",
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "none",
   "editor.stickyScroll.enabled": false,
@@ -55,16 +50,21 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.roundedSelection": false,
   "editor.smoothScrolling": true,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.overviewRulerBorder": false,
   "editor.mouseWheelScrollSensitivity": 2.5,
 
-  // TERMINAL
+  // Terminal
+  // Dependencies:
+  // Git Bash (https://git-scm.com/install/)
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.lineHeight": 1.5,
   "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.tabs.enabled": false,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.tabs.enabled": false,
 
-  // EXPLORER & FILES
+  // Explorer & Files
   "explorer.decorations.badges": false,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
@@ -73,8 +73,12 @@
   "files.dialog.defaultPath": "C:\\Users\\salma\\Documents",
   "material-icon-theme.folders.theme": "classic",
   "material-icon-theme.hidesExplorerArrows": true,
+  "files.associations": {
+    "*.env": "properties"
+  },
+  "material-icon-theme.files.associations": {},
 
-  // WINDOW & UI
+  // Window & UI
   "window.menuBarVisibility": "toggle",
   "window.commandCenter": false,
   "breadcrumbs.enabled": false,
@@ -84,32 +88,14 @@
   "chat.agent.enabled": false,
   //   "window.zoomLevel": 0,
 
-  // VERSION CONTROL
+  // Version Control
   "git.decorations.enabled": false,
   "scm.diffDecorations": "none",
 
-  // EXTENSIONS
-  /* 
-  - Error Lens by Alexander
-  - Code Runner by Jun Han
-   */
-  "errorLens.fontStyleItalic": true,
-  "errorLens.messageBackgroundMode": "none",
-
-  "code-runner.runInTerminal": true,
-  "code-runner.showExecutionMessage": false,
-  "code-runner.ignoreSelection": true,
-  "code-runner.saveFileBeforeRun": true,
-  "code-runner.executorMap": {
-    // "<language>": "<commands>"
-    "python": "clear; uv run $fullFileName"
-  },
-
-  // PYTHON
-  /* Extensions
-  - Python by Microsoft
-  - Ruff by Astral Software
-  */
+  // Python
+  // Extensions:
+  // ms-python.python
+  // charliermarsh.ruff
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
@@ -122,14 +108,13 @@
     "C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\ruff\\Scripts\\python.exe"
   ],
 
-  // HTML & JINJA
-  /* Extensions
-  - Highlight Matching Tag by Vincaslt
-  - HTML Eng Tag Labels by Ante Primorac
-  - Jinja by Wholroyd
-  - Jinja Snippets by Noxiz
-  - Djlint by Monosans
-  */
+  // HTML & Jinja
+  // Extensions:
+  // vincaslt.highlight-matching-tag
+  // anteprimorac.html-end-tag-labels
+  // wholroyd.jinja
+  // noxiz.jinja-snippets
+  // monosans.djlint
   "[html]": {
     "editor.defaultFormatter": "monosans.djlint",
     "editor.formatOnSave": true
@@ -139,31 +124,50 @@
   "djlint.pythonPath": "C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\djlint\\Scripts\\python.exe",
 
   // TOML
-  /* Extensions
-  - Even Better TOML by Tamsafe
-  */
+  // Extensions:
+  // tamasfe.even-better-toml
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
 
   // JSON
-  /* Extensions
-  - Prettier - Code Formatter by Prettier
-  */
+  // Extensions:
+  // esbenp.prettier-vscode
   "[json][jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
 
-  // BASH
-  /* Extensions:
-  - ShellCheck by Timon Wong
-  - shell-format by foxundermoon
-  - shellman by Remisa
-  - shfmt (https://webinstall.dev/shfmt/)
-  */
+  // Bash
+  // Extensions:
+  // timonwong.shellcheck
+  // shell-format by foxundermoon
+  // Remisa.shellman
+  // mkhl.shfmt
+  // Dependencies:
+  // shftmt (https://webinstall.dev/shfmt/)
   "[shellscript]": {
     "editor.defaultFormatter": "mkhl.shfmt",
     "editor.formatOnSave": true
+  },
+
+  // JavaScript
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  // usernamehw.errorlens
+  "errorLens.fontStyleItalic": true,
+  "errorLens.messageBackgroundMode": "none",
+
+  // formulahendry.code-runner
+  "code-runner.runInTerminal": true,
+  "code-runner.showExecutionMessage": false,
+  "code-runner.ignoreSelection": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.executorMap": {
+    // "<language>": "<commands>"
+    "python": "clear; uv run $fullFileName"
   }
 }
