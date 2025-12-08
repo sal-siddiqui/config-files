@@ -63,6 +63,7 @@
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.tabs.enabled": false,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
 
   // Explorer & Files
   "explorer.decorations.badges": false,
@@ -152,10 +153,19 @@
   },
 
   // JavaScript
-  "[javascript]": {
+  "[javascript][css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
+
+  // Java
+  // Extensions:
+  // vscjava.vscode-java-pack
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java",
+    "editor.formatOnSave": true
+  },
+  "java.inlayHints.parameterNames.enabled": "none",
 
   // usernamehw.errorlens
   "errorLens.fontStyleItalic": true,
@@ -168,6 +178,6 @@
   "code-runner.saveFileBeforeRun": true,
   "code-runner.executorMap": {
     // "<language>": "<commands>"
-    "python": "clear; uv run $fullFileName"
+    // "python": "clear; uv run $fullFileName",
   }
 }
