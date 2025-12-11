@@ -93,6 +93,24 @@
   "git.decorations.enabled": false,
   "scm.diffDecorations": "none",
 
+  // usernamehw.errorlens
+  "errorLens.fontStyleItalic": true,
+  "errorLens.messageBackgroundMode": "none",
+
+  // formulahendry.code-runner
+  "code-runner.runInTerminal": true,
+  "code-runner.showExecutionMessage": false,
+  "code-runner.ignoreSelection": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.executorMap": {
+    // "<language>": "<commands>"
+    // "python": "clear; uv run $fullFileName",
+  },
+
+  // Dev Containers
+  // Extensions:
+  // ms-vscode-remote.remote-containers
+
   // Python
   // Extensions:
   // ms-python.python
@@ -142,7 +160,6 @@
   // Bash
   // Extensions:
   // timonwong.shellcheck
-  // shell-format by foxundermoon
   // Remisa.shellman
   // mkhl.shfmt
   // Dependencies:
@@ -165,19 +182,9 @@
     "editor.defaultFormatter": "redhat.java",
     "editor.formatOnSave": true
   },
-  "java.inlayHints.parameterNames.enabled": "none",
+  "java.inlayHints.parameterNames.enabled": "none"
 
-  // usernamehw.errorlens
-  "errorLens.fontStyleItalic": true,
-  "errorLens.messageBackgroundMode": "none",
-
-  // formulahendry.code-runner
-  "code-runner.runInTerminal": true,
-  "code-runner.showExecutionMessage": false,
-  "code-runner.ignoreSelection": true,
-  "code-runner.saveFileBeforeRun": true,
-  "code-runner.executorMap": {
-    // "<language>": "<commands>"
-    // "python": "clear; uv run $fullFileName",
-  }
+  // Spring Boot
+  // Extensions:
+  // vmware.vscode-boot-dev-packs
 }
