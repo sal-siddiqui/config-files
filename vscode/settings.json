@@ -1,8 +1,28 @@
 {
+  // List of Extensions and Dependencies
+  // sainnhe.everforest (color theme)
+  // PKief.material-icon-theme (file icon theme)
+  // Git Bash (https://git-scm.com/install/)
+  // ms-python.python (Python language support)
+  // charliermarsh.ruff (Python formatter)
+  // vincaslt.highlight-matching-tag (HTML)
+  // anteprimorac.html-end-tag-labels (HTML)
+  // wholroyd.jinja (Jinja language support)
+  // noxiz.jinja-snippets (Jinja snippets)
+  // monosans.djlint (Jinja formatter)
+  // tamasfe.even-better-toml (TOML language support)
+  // esbenp.prettier-vscode (HTML, CSS, JavaScript, JSON formatter)
+  // timonwong.shellcheck (Bash linter)
+  // Remisa.shellman (Bash snippets)
+  // mkhl.shfmt (Bash formatter) (https://webinstall.dev/shfmt/)
+  // vscjava.vscode-java-pack (Java language support)
+  // vmware.vscode-boot-dev-packs (Spring Boot support)
+  // redhat.vscode-xml (XML support)
+  // usernamehw.errorlens (Displays errors inline)
+  // formulahendry.code-runner (Run code)
+  // ms-vscode-remote.remote-containers (Dev Containers)
+
   // Theme & Appearance
-  // Extensions:
-  // sainnhe.everforest
-  // PKief.material-icon-theme
   "workbench.colorTheme": "Everforest Dark",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
@@ -55,8 +75,6 @@
   "editor.mouseWheelScrollSensitivity": 2.5,
 
   // Terminal
-  // Dependencies:
-  // Git Bash (https://git-scm.com/install/)
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.lineHeight": 1.5,
   "terminal.integrated.copyOnSelection": true,
@@ -67,7 +85,6 @@
 
   // Explorer & Files
   "explorer.decorations.badges": false,
-  "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
@@ -93,28 +110,7 @@
   "git.decorations.enabled": false,
   "scm.diffDecorations": "none",
 
-  // usernamehw.errorlens
-  "errorLens.fontStyleItalic": true,
-  "errorLens.messageBackgroundMode": "none",
-
-  // formulahendry.code-runner
-  "code-runner.runInTerminal": true,
-  "code-runner.showExecutionMessage": false,
-  "code-runner.ignoreSelection": true,
-  "code-runner.saveFileBeforeRun": true,
-  "code-runner.executorMap": {
-    // "<language>": "<commands>"
-    // "python": "clear; uv run $fullFileName",
-  },
-
-  // Dev Containers
-  // Extensions:
-  // ms-vscode-remote.remote-containers
-
   // Python
-  // Extensions:
-  // ms-python.python
-  // charliermarsh.ruff
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
@@ -128,12 +124,6 @@
   ],
 
   // HTML & Jinja
-  // Extensions:
-  // vincaslt.highlight-matching-tag
-  // anteprimorac.html-end-tag-labels
-  // wholroyd.jinja
-  // noxiz.jinja-snippets
-  // monosans.djlint
   "[html]": {
     "editor.defaultFormatter": "monosans.djlint",
     "editor.formatOnSave": true
@@ -143,48 +133,54 @@
   "djlint.pythonPath": "C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\djlint\\Scripts\\python.exe",
 
   // TOML
-  // Extensions:
-  // tamasfe.even-better-toml
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
 
   // JSON
-  // Extensions:
-  // esbenp.prettier-vscode
   "[json][jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
 
   // Bash
-  // Extensions:
-  // timonwong.shellcheck
-  // Remisa.shellman
-  // mkhl.shfmt
-  // Dependencies:
-  // shftmt (https://webinstall.dev/shfmt/)
   "[shellscript]": {
     "editor.defaultFormatter": "mkhl.shfmt",
     "editor.formatOnSave": true
   },
 
-  // JavaScript
+  // JavaScript, CSS
   "[javascript][css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
 
   // Java
-  // Extensions:
-  // vscjava.vscode-java-pack
   "[java]": {
     "editor.defaultFormatter": "redhat.java",
     "editor.formatOnSave": true
   },
-  "java.inlayHints.parameterNames.enabled": "none"
+  "java.inlayHints.parameterNames.enabled": "none",
 
   // Spring Boot
-  // Extensions:
-  // vmware.vscode-boot-dev-packs
+  "spring-boot.ls.problem.application-properties.PROP_UNKNOWN_PROPERTY": "IGNORE",
+
+  // XML
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml",
+    "editor.formatOnSave": true
+  },
+
+  // Other Extension Configuration
+  "errorLens.fontStyleItalic": true,
+  "errorLens.messageBackgroundMode": "none",
+
+  "code-runner.runInTerminal": true,
+  "code-runner.showExecutionMessage": false,
+  "code-runner.ignoreSelection": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.executorMap": {
+    // "<language>": "<commands>"
+    // "python": "clear; uv run $fullFileName",
+  }
 }
