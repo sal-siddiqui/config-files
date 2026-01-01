@@ -1,0 +1,29 @@
+# https://djlint.com/
+
+# -- Formatter Settings --
+# Close void tags
+close_void_tags = true 
+
+# Formatter will attempt to format template syntax inside of tag attributes
+format_attribute_template_tags=true 
+
+# Consolidate blank lines down to x lines. Default is 0 meaning blank lines will be removed
+max_blank_lines = 1 
+
+# Format contents of style and script tags using css-beautify & js-beautify, respectively
+format_css=true 
+format_js=true
+
+# Use to change the code indentation. Default is 4 (four spaces).
+indent=2
+
+# -- Linter Settings --
+# H005: <html> should have lang attribute
+# H006: <img> should have height/width
+# H013: <img> should have alt text
+# H014: More than 2 blank lines
+# H023: Avoid entity references
+# H025: Orphan tag warning
+# H030: Missing meta description
+# H031: Missing meta keywords
+ignore = "H005,H006,H013,H014,H023,H025,H030,H031"

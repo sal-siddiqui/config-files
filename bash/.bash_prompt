@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Colors (subtle)
+CLR_RESET="\[\e[0m\]"
+CLR_DIM="\[\e[2m\]"
+CLR_CYAN="\[\e[36m\]"
+CLR_YELLOW="\[\e[33m\]"
+
+get_git_branch() {
+  local b
+  b=$(git branch --show-current 2>/dev/null) || return
+  [[ -n $b ]] && printf '%s' "$b"
+}
+
+get_venv() {
+  [[ -n $VIRTUAL_ENV ]] && printf '%s' "$(basename "$VIRTUAL_ENV")"
+}
+
+update_prompt() {
+  local extras="" b v
+
+  b=$(get_git_branch)
+  [[ -n $b ]] && extras+=" ${CLR_YELLOW}($b)${CLR_RESET}"
+
+  v=$(get_venv)
+  [[ -n $v ]] && extras+=" ${CLR_YELLOW}($v)${CLR_RESET}"
+
+  PS1="\n${CLR_CYAN}\u${CLR_RESET} at ${CLR_CYAN}\h${CLR_RESET} in ${CLR_CYAN}\W${CLR_RESET}${extras}\n${CLR_DIM}\$ ${CLR_RESET}"
+}
+
+PROMPT_COMMAND=update_prompt

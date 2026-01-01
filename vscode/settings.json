@@ -1,0 +1,166 @@
+{
+  // -- Extensions and Dependencies
+  // Themes: sainnhe.everforest, PKief.material-icon-theme
+  // Errors: usernamehw.errorlens
+  // Dev Containers: ms-vscode-remote.remote-containers
+  // Bash: timonwong.shellcheck, mads-hartmann.bash-ide-vscode
+  // Python: ms-python.python, charliermarsh.ruff
+  // HTML: vincaslt.highlight-matching-tag, anteprimorac.html-end-tag-labels
+  // Jinja: wholroyd.jinja, noxiz.jinja-snippets, monosans.djlint
+  // Java: vscjava.vscode-java-pack
+  // Spring Boot: vmware.vscode-boot-dev-packs
+  // JavaScript: esbenp.prettier-vscode, dbaeumer.vscode-eslint
+  // TOML: tamasfe.even-better-toml
+  // XML: redhat.vscode-xml
+  // Code Runner: formulahendry.code-runner
+
+  // -- Theme & Appearance
+  "workbench.colorTheme": "Everforest Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "[Everforest Dark]": {
+      "scrollbar.shadow": "#0000",
+      "panel.border": "#0000",
+      "sideBar.border": "#0000",
+      "editorHoverWidget.border": "#0000",
+      "panel.background": "#272e33",
+      "sideBar.background": "#272e33",
+      "editorGroup.border": "#0000"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Everforest Dark]": {}
+  },
+
+  // -- Workbench
+  "workbench.sideBar.location": "right",
+  "workbench.activityBar.location": "hidden",
+  "workbench.statusBar.visible": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.tips.enabled": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.editor.enablePreview": false,
+
+  // -- Editor
+  "editor.fontFamily": "Code New Roman, Consolas",
+  "editor.fontSize": 15,
+  "editor.lineHeight": 2.0,
+  "editor.wordWrapColumn": 100,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "trailing",
+  "editor.stickyScroll.enabled": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.selectionHighlight": false,
+  "editor.guides.indentation": false,
+  "editor.lightbulb.enabled": "off",
+  "editor.occurrencesHighlight": "off",
+  "editor.foldingHighlight": false,
+  "editor.detectIndentation": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.roundedSelection": false,
+  "editor.smoothScrolling": true,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.overviewRulerBorder": false,
+  "editor.mouseWheelScrollSensitivity": 2.5,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
+
+  // -- Terminal
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.lineHeight": 1.5,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.tabs.enabled": false,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "terminal.integrated.suggest.enabled": false,
+
+  // -- Explorer & Files
+  "explorer.decorations.badges": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmPasteNative": false,
+  "files.dialog.defaultPath": "C:\\Users\\salma\\Documents",
+  "material-icon-theme.folders.theme": "classic",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "material-icon-theme.files.associations": {},
+  "files.associations": {
+    "*.env": "properties"
+  },
+
+  // -- Window & UI
+  "window.menuBarVisibility": "toggle",
+  "window.commandCenter": false,
+  "breadcrumbs.enabled": false,
+  "zenMode.centerLayout": false,
+  "zenMode.hideLineNumbers": false,
+  "chat.commandCenter.enabled": false,
+  "chat.agent.enabled": false,
+  "window.zoomLevel": 0,
+
+  // -- Version Control
+  "git.decorations.enabled": false,
+  "scm.diffDecorations": "none",
+
+  // -- Languages
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "ruff.interpreter": ["C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\ruff\\Scripts\\python.exe"],
+
+  "[html][jinja]": {
+    "editor.defaultFormatter": "monosans.djlint"
+  },
+  "djlint.configuration": "C:\\Users\\salma\\AppData\\Roaming\\djlint\\djlint.toml",
+  "djlint.useVenv": false,
+  "djlint.pythonPath": "C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\djlint\\Scripts\\python.exe",
+
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[shellscript]": {
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+  },
+  "bashIde.shfmt.caseIndent": true,
+
+  "[javascript][css][javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.printWidth": 100,
+
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "java.inlayHints.parameterNames.enabled": "none",
+  "spring-boot.ls.problem.application-properties.PROP_UNKNOWN_PROPERTY": "IGNORE",
+
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.renderWhitespace": "boundary"
+  },
+
+  // -- Code Runner
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  // "code-runner.respectShebang": true (default) <-- <shebang> <file>
+
+  // -- Error Lens
+  "errorLens.fontStyleItalic": true,
+  "errorLens.messageBackgroundMode": "none"
+}

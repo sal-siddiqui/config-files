@@ -1,0 +1,58 @@
+// Place your key bindings in this file to override the defaults
+[
+  // Run Java program (Runs the main method)
+  {
+    "key": "shift+enter",
+    "command": "java.debug.runJavaFile",
+    "when": "editorLangId == java"
+  },
+
+  // Execute Python program (Runs the current file)
+  {
+    "key": "shift+enter",
+    "command": "python.execInTerminal",
+    "when": "editorLangId == python"
+  },
+
+  // Execute Bash script (Runs the current file)
+  {
+    "key": "shift+enter",
+    "command": "code-runner.run",
+    "when": "editorLangId == shellscript"
+  },
+
+  // Toggle block comment
+  {
+    "key": "ctrl+shift+/",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+
+  // Go to next problem
+  {
+    "key": "ctrl+numpad1",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus"
+  },
+
+  // Open "Quick Fix" widget
+  {
+    "key": "ctrl+numpad2",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+  },
+
+  // Cycle through suggestions
+  {
+    "key": "ctrl+numpad3",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+
+  // View active terminals
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.quickOpenTerm",
+    "when": "!inSearchEditor && !searchViewletFocus"
+  }
+]
