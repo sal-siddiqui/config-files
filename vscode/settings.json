@@ -13,6 +13,7 @@
   // TOML: tamasfe.even-better-toml
   // XML: redhat.vscode-xml
   // Code Runner: formulahendry.code-runner
+  // AWS: mark-tucker.aws-cli-configure
 
   // -- Theme & Appearance
   "workbench.colorTheme": "Everforest Dark",
