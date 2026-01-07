@@ -2,7 +2,7 @@
   // -- Extensions and Dependencies
   // Themes: sainnhe.everforest, PKief.material-icon-theme
   // Errors: usernamehw.errorlens
-  // Dev Containers: ms-vscode-remote.remote-containers
+  // Docker: jeff-hykin.better-dockerfile-syntax, ms-vscode-remote.remote-containers
   // Bash: timonwong.shellcheck, mads-hartmann.bash-ide-vscode
   // Python: ms-python.python, charliermarsh.ruff
   // HTML: vincaslt.highlight-matching-tag, anteprimorac.html-end-tag-labels
