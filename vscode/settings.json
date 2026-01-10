@@ -46,7 +46,7 @@
   "workbench.editor.enablePreview": false,
 
   // -- Editor
-  "editor.fontFamily": "Code New Roman, Consolas",
+  "editor.fontFamily": "Consolas",
   "editor.fontSize": 15,
   "editor.lineHeight": 2.0,
   "editor.wordWrapColumn": 100,
