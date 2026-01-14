@@ -49,6 +49,13 @@
     "when": "codeActionMenuVisible"
   },
 
+  // Accept suggestion
+  {
+    "key": "ctrl+numpad2",
+    "command": "acceptSelectedCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+
   // View active terminals
   {
     "key": "ctrl+shift+j",
