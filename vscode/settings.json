@@ -26,11 +26,11 @@
       "editorHoverWidget.border": "#0000",
       "panel.background": "#272e33",
       "sideBar.background": "#272e33",
-      "editorGroup.border": "#0000"
-    }
+      "editorGroup.border": "#0000",
+    },
   },
   "editor.tokenColorCustomizations": {
-    "[Everforest Dark]": {}
+    "[Everforest Dark]": {},
   },
 
   // -- Workbench
@@ -54,7 +54,7 @@
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "trailing",
   "editor.stickyScroll.enabled": false,
-  "editor.renderLineHighlight": "gutter",
+  "editor.renderLineHighlight": "all",
   "editor.selectionHighlight": false,
   "editor.guides.indentation": false,
   "editor.lightbulb.enabled": "off",
@@ -67,11 +67,14 @@
   "editor.hideCursorInOverviewRuler": true,
   "editor.overviewRulerBorder": false,
   "editor.mouseWheelScrollSensitivity": 2.5,
+  "editor.insertSpaces": false,
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "always"
+    "source.organizeImports": "always",
   },
+  "editor.cursorSurroundingLines": 5,
+  "editor.scrollBeyondLastLine": false,
 
   // -- Terminal
   "terminal.integrated.fontSize": 15,
@@ -93,7 +96,7 @@
   "material-icon-theme.hidesExplorerArrows": true,
   "material-icon-theme.files.associations": {},
   "files.associations": {
-    "*.env": "properties"
+    "*.env": "properties",
   },
 
   // -- Window & UI
@@ -112,48 +115,48 @@
 
   // -- Languages
   "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff"
+    "editor.defaultFormatter": "charliermarsh.ruff",
   },
   "ruff.interpreter": ["C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\ruff\\Scripts\\python.exe"],
 
   "[html][jinja]": {
-    "editor.defaultFormatter": "monosans.djlint"
+    "editor.defaultFormatter": "monosans.djlint",
   },
   "djlint.configuration": "C:\\Users\\salma\\AppData\\Roaming\\djlint\\djlint.toml",
   "djlint.useVenv": false,
   "djlint.pythonPath": "C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\djlint\\Scripts\\python.exe",
 
   "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml"
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
   },
 
   "[json][jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
   "[shellscript]": {
-    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
   },
   "bashIde.shfmt.caseIndent": true,
 
   "[javascript][css][javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "prettier.printWidth": 100,
 
   "[java]": {
-    "editor.defaultFormatter": "redhat.java"
+    "editor.defaultFormatter": "redhat.java",
   },
   "java.inlayHints.parameterNames.enabled": "none",
   "spring-boot.ls.problem.application-properties.PROP_UNKNOWN_PROPERTY": "IGNORE",
 
   "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
+    "editor.defaultFormatter": "redhat.vscode-xml",
   },
 
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.renderWhitespace": "boundary"
+    "editor.renderWhitespace": "boundary",
   },
 
   // -- Code Runner
@@ -164,5 +167,5 @@
 
   // -- Error Lens
   "errorLens.fontStyleItalic": true,
-  "errorLens.messageBackgroundMode": "none"
+  "errorLens.messageBackgroundMode": "none",
 }
