@@ -1,0 +1,14 @@
+# https://www.nano-editor.org/dist/latest/nano.html
+
+set tabsize 2
+set tabstospaces
+
+set softwrap
+set atblanks
+
+set linenumbers
+set minibar
+set stateflags
+set nohelp
+
+set autoindent
