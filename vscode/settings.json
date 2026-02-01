@@ -16,21 +16,13 @@
   // AWS: mark-tucker.aws-cli-configure
 
   // -- Theme & Appearance
-  "workbench.colorTheme": "Everforest Dark",
+  "workbench.colorTheme": "Default Dark+",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
-    "[Everforest Dark]": {
+   "[Default Dark+]": {
       "scrollbar.shadow": "#0000",
       "panel.border": "#0000",
-      "sideBar.border": "#0000",
-      "editorHoverWidget.border": "#0000",
-      "panel.background": "#272e33",
-      "sideBar.background": "#272e33",
-      "editorGroup.border": "#0000",
     },
-  },
-  "editor.tokenColorCustomizations": {
-    "[Everforest Dark]": {},
   },
 
   // -- Workbench
@@ -54,7 +46,7 @@
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "trailing",
   "editor.stickyScroll.enabled": false,
-  "editor.renderLineHighlight": "all",
+  "editor.renderLineHighlight": "none",
   "editor.selectionHighlight": false,
   "editor.guides.indentation": false,
   "editor.lightbulb.enabled": "off",
