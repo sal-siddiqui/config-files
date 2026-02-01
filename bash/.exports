@@ -1,0 +1,10 @@
+options=(
+  --use-color --color=Sr --color=My
+  --hilite-search --incsearch
+  --status-column
+  --ignore-case
+  --wordwrap
+  --QUIET
+)
+
+export LESS="${options[*]}"; unset options
