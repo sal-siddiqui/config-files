@@ -1,6 +1,6 @@
 {
   // -- Extensions and Dependencies
-  // Themes: sainnhe.everforest, PKief.material-icon-theme
+  // Themes: PKief.material-icon-theme
   // Errors: usernamehw.errorlens
   // Docker: jeff-hykin.better-dockerfile-syntax, ms-vscode-remote.remote-containers
   // Bash: timonwong.shellcheck, mads-hartmann.bash-ide-vscode
