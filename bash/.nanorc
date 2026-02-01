@@ -12,3 +12,4 @@ set stateflags
 set nohelp
 
 set autoindent
+set regexp
