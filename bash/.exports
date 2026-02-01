@@ -1,5 +1,5 @@
 options=(
-  --use-color --color=Sr --color=My
+  --use-color --color=Sry --color=My
   --hilite-search --incsearch
   --status-column
   --ignore-case
