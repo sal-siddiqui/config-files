@@ -1,1 +1,6 @@
+alias la="ls --almost-all --classify"
+alias ll="ls --almost-all --classify -l"
+
 alias grep="grep --color=auto --extended-regexp"
+
+alias c="clear"
