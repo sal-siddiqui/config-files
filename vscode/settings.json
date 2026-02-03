@@ -1,6 +1,6 @@
 {
   // -- Extensions and Dependencies
-  // Themes: PKief.material-icon-theme
+  // Themes: AndreiLucaci.everforest-pro, PKief.material-icon-theme
   // Errors: usernamehw.errorlens
   // Docker: jeff-hykin.better-dockerfile-syntax, ms-vscode-remote.remote-containers
   // Bash: timonwong.shellcheck, mads-hartmann.bash-ide-vscode
@@ -16,12 +16,11 @@
   // AWS: mark-tucker.aws-cli-configure
 
   // -- Theme & Appearance
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Everforest Pro Dark",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
-   "[Default Dark+]": {
+   "[Everforest Pro Dark]": {
       "scrollbar.shadow": "#0000",
-      "panel.border": "#0000",
     },
   },
 
