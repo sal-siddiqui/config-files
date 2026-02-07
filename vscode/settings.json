@@ -10,8 +10,6 @@
   // Java: vscjava.vscode-java-pack
   // Spring Boot: vmware.vscode-boot-dev-packs
   // JavaScript: esbenp.prettier-vscode, dbaeumer.vscode-eslint
-  // TOML: tamasfe.even-better-toml
-  // XML: redhat.vscode-xml
   // Code Runner: formulahendry.code-runner
   // AWS: mark-tucker.aws-cli-configure
 
@@ -19,7 +17,7 @@
   "workbench.colorTheme": "Everforest Pro Dark",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
-   "[Everforest Pro Dark]": {
+    "[Everforest Pro Dark]": {
       "scrollbar.shadow": "#0000",
     },
   },
@@ -45,7 +43,7 @@
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "trailing",
   "editor.stickyScroll.enabled": false,
-  "editor.renderLineHighlight": "none",
+  "editor.renderLineHighlight": "all",
   "editor.selectionHighlight": false,
   "editor.guides.indentation": false,
   "editor.lightbulb.enabled": "off",
@@ -105,11 +103,13 @@
   "scm.diffDecorations": "none",
 
   // -- Languages
+  // Python
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
   },
   "ruff.interpreter": ["C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\ruff\\Scripts\\python.exe"],
 
+  // HTML
   "[html][jinja]": {
     "editor.defaultFormatter": "monosans.djlint",
   },
@@ -117,34 +117,24 @@
   "djlint.useVenv": false,
   "djlint.pythonPath": "C:\\Users\\salma\\AppData\\Roaming\\uv\\tools\\djlint\\Scripts\\python.exe",
 
-  "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml",
-  },
-
+  // JSON
   "[json][jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
+  // Bash
   "[shellscript]": {
     "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
   },
   "bashIde.shfmt.caseIndent": true,
 
+  // JavaScript
   "[javascript][css][javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "prettier.printWidth": 100,
 
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java",
-  },
-  "java.inlayHints.parameterNames.enabled": "none",
-  "spring-boot.ls.problem.application-properties.PROP_UNKNOWN_PROPERTY": "IGNORE",
-
-  "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml",
-  },
-
+  // YAML
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.renderWhitespace": "boundary",
@@ -154,7 +144,6 @@
   "code-runner.runInTerminal": true,
   "code-runner.saveFileBeforeRun": true,
   "code-runner.ignoreSelection": true,
-  // "code-runner.respectShebang": true (default) <-- <shebang> <file>
 
   // -- Error Lens
   "errorLens.fontStyleItalic": true,
