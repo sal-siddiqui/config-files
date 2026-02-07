@@ -1,17 +1,15 @@
 {
   // -- Extensions and Dependencies
   // Themes: AndreiLucaci.everforest-pro, PKief.material-icon-theme
-  // Errors: usernamehw.errorlens
-  // Docker: jeff-hykin.better-dockerfile-syntax, ms-vscode-remote.remote-containers
-  // Bash: timonwong.shellcheck, mads-hartmann.bash-ide-vscode
   // Python: ms-python.python, charliermarsh.ruff
   // HTML: vincaslt.highlight-matching-tag, anteprimorac.html-end-tag-labels
   // Jinja: wholroyd.jinja, noxiz.jinja-snippets, monosans.djlint
-  // Java: vscjava.vscode-java-pack
-  // Spring Boot: vmware.vscode-boot-dev-packs
   // JavaScript: esbenp.prettier-vscode, dbaeumer.vscode-eslint
-  // Code Runner: formulahendry.code-runner
+  // Bash: timonwong.shellcheck, mads-hartmann.bash-ide-vscode
+  // Docker: jeff-hykin.better-dockerfile-syntax, ms-vscode-remote.remote-containers
   // AWS: mark-tucker.aws-cli-configure
+  // Code Runner: formulahendry.code-runner
+  // Errors: usernamehw.errorlens
 
   // -- Theme & Appearance
   "workbench.colorTheme": "Everforest Pro Dark Vibrant",
