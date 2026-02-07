@@ -14,7 +14,7 @@
   // AWS: mark-tucker.aws-cli-configure
 
   // -- Theme & Appearance
-  "workbench.colorTheme": "Everforest Pro Dark",
+  "workbench.colorTheme": "Everforest Pro Dark Vibrant",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
     "[Everforest Pro Dark]": {
