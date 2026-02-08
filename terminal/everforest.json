@@ -1,12 +1,12 @@
 {
-  "name": "Everforest",
+  "name": "Everforest Dark - Hard",
 
   "background": "#272E33",
   "foreground": "#D3C6AA",
-  "cursorColor": "#FFFFFF",
-  "selectionBackground": "#FFFFFF",
+  "cursorColor": "#D3C6AA",
+  "selectionBackground": "#414B50",
 
-  "black": "#475258",
+  "black": "#2E383C",
   "red": "#E67E80",
   "green": "#A7C080",
   "yellow": "#DBBC7F",
@@ -15,7 +15,7 @@
   "cyan": "#83C092",
   "white": "#D3C6AA",
 
-  "brightBlack": "#4B565C",
+  "brightBlack": "#859289",
   "brightRed": "#E67E80",
   "brightGreen": "#A7C080",
   "brightYellow": "#DBBC7F",
