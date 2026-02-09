@@ -1,15 +1,19 @@
-# https://www.nano-editor.org/dist/latest/nano.html
+# Docs: https://www.nano-editor.org/dist/latest/nano.html
 
+# Editor
 set tabsize 2
-set tabstospaces
-
+set autoindent
 set softwrap
 set atblanks
 
+# UI clean-up
 set linenumbers
 set minibar
 set stateflags
 set nohelp
 
-set autoindent
-set regexp
+# Colors
+set numbercolor ,normal
+set titlecolor ,black
+set keycolor ,normal
+set statuscolor ,black
