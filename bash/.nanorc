@@ -13,7 +13,8 @@ set stateflags
 set nohelp
 
 # Colors
-set numbercolor ,normal
-set titlecolor ,black
-set keycolor ,normal
-set statuscolor ,black
+set numbercolor gray,normal
+set promptcolor normal,black
+set minicolor normal,black
+set keycolor normal,black
+set keycolor normal,black
