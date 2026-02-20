@@ -1,2 +1,5 @@
-alias ls="ls --color --classify"
-alias ll="ls -l"
+alias ls='ls --color=auto --classify'
+alias ll='ls -l'
+
+alias type='type -a'
+alias which='which -a'
