@@ -1,6 +1,6 @@
 alias ls='ls --color=auto --classify'
 alias ll='ls -l'
-alias l.='ls -d .*'
+alias l.='ls -d .* 2> /dev/null'
 
 alias type='type -a'
 alias which='which -a'
