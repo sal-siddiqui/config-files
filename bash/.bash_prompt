@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# PS1='\n\[\e[0;32m\]\u@\h \w\[\e[0m\]\n\$ '
 # Colors (subtle)
 CLR_RESET="\[\e[0m\]"
 CLR_DIM="\[\e[2m\]"
