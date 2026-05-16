@@ -1,0 +1,13 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "ctrl+numpad1",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.quickOpenTerm",
+    "when": "!inSearchEditor && !searchViewletFocus"
+  }
+]

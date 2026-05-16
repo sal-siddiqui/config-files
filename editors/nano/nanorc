@@ -1,0 +1,28 @@
+# ~/.config/nano/nanorc
+
+# Editor
+set linenumbers
+set minibar
+set nohelp
+
+# Indentation
+set tabsize 2
+set autoindent
+
+# Wrapping
+set softwrap
+set atblanks
+
+# Syntac highlighting
+include "/usr/share/nano/*.nanorc"
+
+# Colors
+set numbercolor     gray,normal  # numbers
+set minicolor       blue,normal  # minibar
+set spotlightcolor  white,blue   # searching
+set selectedcolor   white,black  # highlighting
+set promptcolor     blue,normal  # prompt
+set statuscolor     cyan,normal  # messages
+set errorcolor      red,normal   # error messages
+set keycolor        blue,normal  # keyboard shortcuts
+set functioncolor   blue,normal  # keyboard shortcuts actions

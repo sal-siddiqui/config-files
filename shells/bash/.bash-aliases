@@ -1,0 +1,34 @@
+# Common
+alias c='clear'
+
+alias l='ls --color --classify'
+alias ll='l -l'
+alias la='l --almost-all'
+
+# Git
+alias gs='git status --short'
+alias gb='git branch -vv --all'
+alias gd='git diff --output-indicator-new=" " --output-indicator-old=" "'
+alias gl='git log --all --graph --pretty=format:\
+"%C(blue)%h %C(brightblack)%an %ar %C(blue)%D%C(reset)%n%s%n"'
+
+# Docker & Kubernetes
+alias mk='minikube'
+alias kc='kubectl'
+alias kpods='kubectl get pods'
+alias kapps='kubectl get svc,deploy,sts'
+
+# Navigation
+function popd() { builtin popd > /dev/null; }
+function pushd() {
+	if (($# == 0)); then
+		builtin pushd "$HOME" > /dev/null
+	elif [[ $1 == "-"  ]]; then
+		builtin popd > /dev/null
+	else
+		builtin pushd "$1" > /dev/null
+	fi
+}
+
+alias cd='pushd'
+alias back='popd'

@@ -1,0 +1,40 @@
+function is_git_repo() {
+	git status &> /dev/null
+	return $?
+}
+
+function get_git_branch() {
+	local branch=$(git branch --show-current)
+	[[ -z $branch ]] && branch=$(git rev-parse --short HEAD) # Detached state
+
+	printf 'HEAD->%s' "$branch"
+}
+
+function get_kube_context() {
+	local cluster='.contexts[0].context.cluster'
+	local namespace='.contexts[0].context.namespace'
+
+	kubectl config view --minify \
+		--output="jsonpath={${cluster}}/{${namespace}}" 2> /dev/null
+}
+
+function get_PS1() {
+	local user_host='\u@\h' current_dir='\w' extras=() extras_str=''
+
+	is_git_repo && extras+=("$(get_git_branch)")
+	((KUBERNETES == 1)) && extras+=("$(get_kube_context)")
+
+	if ((${#extras[@]})); then
+		printf -v extras_str ' (%s)' "${extras[@]}"
+	fi
+
+	local blue='\[\e[34m\]' cyan='\[\e[36m\]' reset='\[\e[m\]'
+
+	user_host="${blue}${user_host}${reset}"
+	current_dir="${blue}${current_dir}${reset}"
+	[[ -n $extras_str ]] && extras_str="${cyan}${extras_str}${reset}"
+
+	printf '\n%s %s%s\n\$ ' "$user_host" "$current_dir" "$extras_str"
+}
+
+PROMPT_COMMAND='PS1=$(get_PS1)'

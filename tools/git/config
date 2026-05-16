@@ -1,0 +1,22 @@
+[user]
+	name = Salman Siddiqui
+	email = salmansiddiqui172002@gmail.com
+
+[init]
+	defaultBranch = main
+
+[core]
+	editor = code --wait
+	autocrlf = true
+	pager = less --quit-if-one-screen --RAW-CONTROL-CHARS  --no-init
+
+[status]
+	branch = true
+	showStash = true
+	showUntrackedFiles = all
+
+[push]
+	followTags = true
+
+[includeIf "gitdir:~/Documents/progressoft-projects/"]
+	path = ~/.config/git/config-progressoft

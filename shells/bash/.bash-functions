@@ -1,0 +1,46 @@
+function ff () {
+	(($# < 1)) && return 1
+
+	local find_args=()
+	local pattern
+	for pattern in "$@"; do
+		find_args+=(-iname "*$pattern*" -o)
+	done
+	unset 'find_args[${#find_args[@]}-1]' # remove last '-o'
+
+	find . -type f '(' "${find_args[@]}" ')' 2> /dev/null
+}
+
+function fstr() {
+	local is_case_insensitive=0
+
+	OPTIND=1
+	while getopts ':i' opt; do
+		case "$opt" in
+			i) is_case_insensitive=1 ;;
+		esac
+	done
+	shift $(($OPTIND - 1))
+
+	(($# < 1)) && return 1
+
+	local text=$1
+	local file_pattern=${2:-*}
+	local grep_opts=(-sHn --color=auto)
+	((is_case_insensitive)) && grep_opts+=(-i)
+
+	find . -type f -iname "$file_pattern" -exec \
+		grep "${grep_opts[@]}" "$text" {} +
+}
+
+function fcd() {
+	fzf_args=(--info=hidden --border=sharp --prompt='cd ' --color='fg:8,fg+:4,bg+:0,hl:3,hl+:3,gutter:0,marker:4,pointer:4,border:0')
+	local dir=$(find . -type d -print | fzf "${fzf_args[@]}")
+	[[ -n $dir ]] && cd "$dir"
+}
+
+function fnano() {
+	fzf_args=(--info=hidden --border=sharp --multi --prompt='nano ' --color='fg:8,fg+:4,bg+:0,hl:3,hl+:3,gutter:0,marker:4,pointer:4,border:0')
+	local files=$(find . -type f | fzf "${fzf_args[@]}")
+	[[ -n $files ]] && nano $files
+}

@@ -1,0 +1,3 @@
+export VISUAL='nano'
+export PAGER='less'
+export LESS='--hilite-search --ignore-case --use-color -DPb -DEb -DSwb'
