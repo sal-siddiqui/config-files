@@ -29,9 +29,6 @@
     "source.organizeImports": "always"
   },
 
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-
   "workbench.colorTheme": "Nord Flat",
   "workbench.activityBar.location": "hidden",
   "workbench.editor.enablePreview": false,
@@ -48,6 +45,9 @@
     }
   },
 
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
   "window.menuBarVisibility": "toggle",
   "window.commandCenter": false,
 
@@ -56,7 +56,11 @@
 
   "breadcrumbs.enabled": false,
 
-  // Explorer
+  "git.decorations.enabled": false,
+  "scm.diffDecorations": "none",
+
+  // File Explorer
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.enableStickyScroll": false,
   "material-icon-theme.folders.theme": "classic",
@@ -71,22 +75,16 @@
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.initialHint": false,
 
-  // Version Control
-  "git.decorations.enabled": false,
-  "scm.diffDecorations": "none",
-
-  // Error Lens
-  "errorLens.messageBackgroundMode": "none",
-
-  // WSL
-  "security.workspace.trust.untrustedFiles": "prompt",
-
-  // Bash (WSL)
-  "bashIde.shellcheckPath": "/usr/bin/shellcheck",
-  "bashIde.shfmt.path": "/usr/bin/shfmt",
-
-  //  JSON, JSONC, & YAML
+  // Languages
   "[json][jsonc][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+
+  // Extensions
+  "errorLens.messageBackgroundMode": "none",
+
+  "security.workspace.trust.untrustedFiles": "prompt",
+
+  "bashIde.shellcheckPath": "/usr/bin/shellcheck",
+  "bashIde.shfmt.path": "/usr/bin/shfmt"
 }

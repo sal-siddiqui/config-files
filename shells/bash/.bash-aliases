@@ -6,17 +6,17 @@ alias ll='l -l'
 alias la='l --almost-all'
 
 # Git
-alias gs='git status --short'
-alias gb='git branch -vv --all'
-alias gd='git diff --output-indicator-new=" " --output-indicator-old=" "'
-alias gl='git log --all --graph --pretty=format:\
+alias gs='git.exe status --short'
+alias gb='git.exe branch -vv --all'
+alias gd='git.exe diff --output-indicator-new=" " --output-indicator-old=" "'
+alias gl='git.exe log --all --graph --pretty=format:\
 "%C(blue)%h %C(brightblack)%an %ar %C(blue)%D%C(reset)%n%s%n"'
 
 # Docker & Kubernetes
-alias mk='minikube'
-alias kc='kubectl'
-alias kpods='kubectl get pods'
-alias kapps='kubectl get svc,deploy,sts'
+alias mk='minikube.exe'
+alias kc='kubectl.exe'
+alias kpods='kubectl.exe get pods'
+alias kapps='kubectl.exe get services,deployments,statefulsets'
 
 # Navigation
 function popd() { builtin popd > /dev/null; }

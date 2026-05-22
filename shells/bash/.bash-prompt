@@ -1,11 +1,11 @@
 function is_git_repo() {
-	git status &> /dev/null
+	git.exe status &> /dev/null
 	return $?
 }
 
 function get_git_branch() {
-	local branch=$(git branch --show-current)
-	[[ -z $branch ]] && branch=$(git rev-parse --short HEAD) # Detached state
+	local branch=$(git.exe branch --show-current)
+	[[ -z $branch ]] && branch=$(git.exe rev-parse --short HEAD) # Detached state
 
 	printf 'HEAD->%s' "$branch"
 }
@@ -14,7 +14,7 @@ function get_kube_context() {
 	local cluster='.contexts[0].context.cluster'
 	local namespace='.contexts[0].context.namespace'
 
-	kubectl config view --minify \
+	kubectl.exe config view --minify \
 		--output="jsonpath={${cluster}}/{${namespace}}" 2> /dev/null
 }
 

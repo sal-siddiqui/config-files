@@ -21,8 +21,8 @@ set numbercolor     gray,normal  # numbers
 set minicolor       blue,normal  # minibar
 set spotlightcolor  white,blue   # searching
 set selectedcolor   white,black  # highlighting
-set promptcolor     blue,normal  # prompt
-set statuscolor     cyan,normal  # messages
-set errorcolor      red,normal   # error messages
+set promptcolor     blue,black   # prompt
+set statuscolor     white,blue   # messages
+set errorcolor      white,red    # error messages
 set keycolor        blue,normal  # keyboard shortcuts
 set functioncolor   blue,normal  # keyboard shortcuts actions
