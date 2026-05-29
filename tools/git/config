@@ -19,4 +19,4 @@
 	followTags = true
 
 [includeIf "gitdir:~/Documents/progressoft-projects/"]
-	path = ~/.config/git/config-progressoft
+	path = ~/Documents/progressoft-projects/.gitconfig

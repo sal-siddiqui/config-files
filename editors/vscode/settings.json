@@ -24,7 +24,7 @@
   "editor.overviewRulerBorder": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 100,
+  "editor.wordWrapColumn": 80,
   "editor.codeActionsOnSave": {
     "source.organizeImports": "always"
   },
@@ -38,8 +38,9 @@
   "workbench.startupEditor": "none",
   "workbench.colorCustomizations": {
     "[Nord Flat]": {
-      "list.hoverBackground": "#2e344099",
-      "list.hoverForeground": "#88c0d0",
+      "list.hoverBackground": "#3b4252",
+      "editorHoverWidget.border": "#4c566a",
+      "editor.selectionBackground": "#3b4252",
       "quickInputList.focusForeground": "#88c0d0",
       "editorWhitespace.foreground": "#81a1c199"
     }
@@ -85,6 +86,7 @@
 
   "security.workspace.trust.untrustedFiles": "prompt",
 
-  "bashIde.shellcheckPath": "/usr/bin/shellcheck",
-  "bashIde.shfmt.path": "/usr/bin/shfmt"
+  "bashIde.shellcheckPath": "shellcheck.exe",
+  "bashIde.shfmt.path": "shfmt.exe",
+  "bashIde.shfmt.caseIndent": true
 }

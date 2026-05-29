@@ -1,5 +1,5 @@
 function is_git_repo() {
-	git.exe status &> /dev/null
+	git.exe status &>/dev/null
 	return $?
 }
 
@@ -14,8 +14,10 @@ function get_kube_context() {
 	local cluster='.contexts[0].context.cluster'
 	local namespace='.contexts[0].context.namespace'
 
-	kubectl.exe config view --minify \
-		--output="jsonpath={${cluster}}/{${namespace}}" 2> /dev/null
+	local cluster_ns=$(kubectl.exe config view --minify \
+		--output="jsonpath={${cluster}}/{${namespace}}" 2>/dev/null)
+
+	echo "CTX->$cluster_ns"
 }
 
 function get_PS1() {
@@ -25,14 +27,18 @@ function get_PS1() {
 	((KUBERNETES == 1)) && extras+=("$(get_kube_context)")
 
 	if ((${#extras[@]})); then
-		printf -v extras_str ' (%s)' "${extras[@]}"
+		printf -v extras_str ' (%s)' "$(
+			IFS=','
+			echo "${extras[*]}"
+		)"
+		extras_str="${extras_str//,/, }"
 	fi
 
-	local blue='\[\e[34m\]' cyan='\[\e[36m\]' reset='\[\e[m\]'
+	local blue='\[\e[34m\]' yellow='\[\e[33m\]' reset='\[\e[m\]'
 
 	user_host="${blue}${user_host}${reset}"
 	current_dir="${blue}${current_dir}${reset}"
-	[[ -n $extras_str ]] && extras_str="${cyan}${extras_str}${reset}"
+	[[ -n $extras_str ]] && extras_str="${yellow}${extras_str}${reset}"
 
 	printf '\n%s %s%s\n\$ ' "$user_host" "$current_dir" "$extras_str"
 }

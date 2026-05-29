@@ -17,16 +17,17 @@ alias mk='minikube.exe'
 alias kc='kubectl.exe'
 alias kpods='kubectl.exe get pods'
 alias kapps='kubectl.exe get services,deployments,statefulsets'
+alias kw='watch kubectl.exe get'
 
 # Navigation
-function popd() { builtin popd > /dev/null; }
+function popd() { builtin popd >/dev/null; }
 function pushd() {
 	if (($# == 0)); then
-		builtin pushd "$HOME" > /dev/null
-	elif [[ $1 == "-"  ]]; then
-		builtin popd > /dev/null
+		builtin pushd "$HOME" >/dev/null
+	elif [[ $1 == "-" ]]; then
+		builtin popd >/dev/null
 	else
-		builtin pushd "$1" > /dev/null
+		builtin pushd "$1" >/dev/null
 	fi
 }
 
