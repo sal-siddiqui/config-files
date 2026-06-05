@@ -7,7 +7,7 @@ function get_git_branch() {
 	local branch=$(git.exe branch --show-current)
 	[[ -z $branch ]] && branch=$(git.exe rev-parse --short HEAD) # Detached state
 
-	printf 'HEAD->%s' "$branch"
+	printf 'HEAD=%s' "$branch"
 }
 
 function get_kube_context() {
@@ -17,7 +17,7 @@ function get_kube_context() {
 	local cluster_ns=$(kubectl.exe config view --minify \
 		--output="jsonpath={${cluster}}/{${namespace}}" 2>/dev/null)
 
-	echo "CTX->$cluster_ns"
+	echo "KUBE=$cluster_ns"
 }
 
 function get_PS1() {
@@ -34,11 +34,11 @@ function get_PS1() {
 		extras_str="${extras_str//,/, }"
 	fi
 
-	local blue='\[\e[34m\]' yellow='\[\e[33m\]' reset='\[\e[m\]'
+	local blue='\[\e[34m\]' cyan='\[\e[36m\]' reset='\[\e[m\]'
 
 	user_host="${blue}${user_host}${reset}"
 	current_dir="${blue}${current_dir}${reset}"
-	[[ -n $extras_str ]] && extras_str="${yellow}${extras_str}${reset}"
+	[[ -n $extras_str ]] && extras_str="${cyan}${extras_str}${reset}"
 
 	printf '\n%s %s%s\n\$ ' "$user_host" "$current_dir" "$extras_str"
 }

@@ -7,11 +7,11 @@
   // Jinja: wholroyd.jinja, noxiz.jinja-snippets, monosans.djlint
   // JavaScript: dbaeumer.vscode-eslint
   // Bash: timonwong.shellcheck, mads-hartmann.bash-ide-vscode
-  // Docker: jeff-hykin.better-dockerfile-syntax
+  // Docker: docker.docker
 
   // Editor
-  "editor.fontFamily": "Hack",
-  "editor.fontSize": 15,
+  "editor.fontFamily": "Code New Roman",
+  "editor.fontSize": 16,
   "editor.guides.indentation": false,
   "editor.insertSpaces": false,
   "editor.lineHeight": 2,
@@ -25,6 +25,7 @@
   "editor.hideCursorInOverviewRuler": true,
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 80,
+  "editor.showFoldingControls": "never",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "always"
   },
@@ -39,10 +40,11 @@
   "workbench.colorCustomizations": {
     "[Nord Flat]": {
       "list.hoverBackground": "#3b4252",
-      "editorHoverWidget.border": "#4c566a",
       "editor.selectionBackground": "#3b4252",
+      "editorHoverWidget.border": "#4c566a",
       "quickInputList.focusForeground": "#88c0d0",
-      "editorWhitespace.foreground": "#81a1c199"
+      "editorWhitespace.foreground": "#88c0d0",
+      "editorMarkerNavigation.background": "#0000"
     }
   },
 
@@ -68,7 +70,7 @@
   "material-icon-theme.hidesExplorerArrows": true,
 
   // Terminal
-  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontSize": 15,
   "terminal.integrated.lineHeight": 1.5,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.copyOnSelection": true,
@@ -83,8 +85,6 @@
 
   // Extensions
   "errorLens.messageBackgroundMode": "none",
-
-  "security.workspace.trust.untrustedFiles": "prompt",
 
   "bashIde.shellcheckPath": "shellcheck.exe",
   "bashIde.shfmt.path": "shfmt.exe",
