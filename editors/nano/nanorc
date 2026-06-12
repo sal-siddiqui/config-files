@@ -26,3 +26,9 @@ set statuscolor     white,blue   # messages
 set errorcolor      white,red    # error messages
 set keycolor        blue,normal  # keyboard shortcuts
 set functioncolor   blue,normal  # keyboard shortcuts actions
+
+# Keybindings
+bind ^F right all
+bind M-F nextword all
+bind ^B left all
+bind M-B prevword all

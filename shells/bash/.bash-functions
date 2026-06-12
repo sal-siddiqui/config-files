@@ -1,10 +1,10 @@
-function ff () {
+function ff() {
 	(($# < 1)) && return 1
 
 	local find_args=()
 	local pattern
 	for pattern in "$@"; do
-		find_args+=(-iname "*$pattern*" -o)
+		find_args+=( -iname "*$pattern*" -o )
 	done
 	unset 'find_args[${#find_args[@]}-1]' # remove last '-o'
 
@@ -20,7 +20,7 @@ function fstr() {
 			i) is_case_insensitive=1 ;;
 		esac
 	done
-	shift $(($OPTIND - 1))
+	shift $(( $OPTIND - 1 ))
 
 	(($# < 1)) && return 1
 
@@ -34,11 +34,21 @@ function fstr() {
 }
 
 function fcd() {
-	local dir=$(find . -type d -print | fzf.exe --prompt='cd ')
+	local dir=$(find . -type d -print 2> /dev/null | fzf.exe --prompt='cd ')
 	[[ -n $dir ]] && cd "$dir"
 }
 
 function fnano() {
-	local files=$(find . -type f | fzf.exe --multi --prompt='nano ')
+	local files=$(find . -type f 2> /dev/null | fzf.exe --multi --prompt='nano ')
 	[[ -n $files ]] && nano $files
+}
+
+function hl () {
+	local IFS='|'
+	local pattern="$*"
+	grep --color=always -E "$|${pattern}"
+}
+
+function ke() {
+	kubectl.exe events --for="$*"
 }

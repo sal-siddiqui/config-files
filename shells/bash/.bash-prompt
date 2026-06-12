@@ -1,32 +1,35 @@
 function is_git_repo() {
-	git.exe status &>/dev/null
+	git.exe status &> /dev/null
 	return $?
 }
 
 function get_git_branch() {
 	local branch=$(git.exe branch --show-current)
-	[[ -z $branch ]] && branch=$(git.exe rev-parse --short HEAD) # Detached state
 
-	printf 'HEAD=%s' "$branch"
+	# Handle detached state
+	[[ -z $branch ]] && branch=$(git.exe rev-parse --short HEAD)
+
+	echo "$branch"
 }
 
 function get_kube_context() {
 	local cluster='.contexts[0].context.cluster'
 	local namespace='.contexts[0].context.namespace'
 
-	local cluster_ns=$(kubectl.exe config view --minify \
-		--output="jsonpath={${cluster}}/{${namespace}}" 2>/dev/null)
-
-	echo "KUBE=$cluster_ns"
+	echo $(kubectl.exe config view \
+				--minify \
+				--output="jsonpath={${cluster}}/{${namespace}}" \
+				2> /dev/null
+				)
 }
 
 function get_PS1() {
-	local user_host='\u@\h' current_dir='\w' extras=() extras_str=''
+	local user_host='\u@\h' current_dir='\W' extras=() extras_str=''
 
-	is_git_repo && extras+=("$(get_git_branch)")
-	((KUBERNETES == 1)) && extras+=("$(get_kube_context)")
+	is_git_repo && extras+=( "$(get_git_branch)" )
+	(( KUBERNETES == 1 )) && extras+=( "$(get_kube_context)" )
 
-	if ((${#extras[@]})); then
+	if (( ${#extras[@]} )); then
 		printf -v extras_str ' (%s)' "$(
 			IFS=','
 			echo "${extras[*]}"

@@ -7,16 +7,17 @@ alias la='l --almost-all'
 
 # Git
 alias gs='git.exe status --short'
-alias gb='git.exe branch -vv --all'
-alias gd='git.exe diff --output-indicator-new=" " --output-indicator-old=" "'
 alias gl='git.exe log --all --graph --pretty=format:\
 "%C(blue)%h %C(brightblack)%an %ar %C(blue)%D%C(reset)%n%s%n"'
+alias gb='git.exe branch -vv --all'
 
 # Docker & Kubernetes
+alias d='docker.exe'
+alias dl='docker ps -a --format \
+"table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Networks}}\t{{.Status}}"'
 alias mk='minikube.exe'
 alias kc='kubectl.exe'
-alias kpods='kubectl.exe get pods'
-alias kapps='kubectl.exe get services,deployments,statefulsets'
+alias kl='kubectl.exe get services,deployments,statefulsets'
 alias kw='watch kubectl.exe get'
 
 # Navigation
