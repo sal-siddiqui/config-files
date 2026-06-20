@@ -1,34 +1,31 @@
 # ~/.config/nano/nanorc
 
-# Editor
+# -- Layout
 set linenumbers
 set minibar
 set nohelp
 
-# Indentation
+# -- Editor
 set tabsize 2
 set autoindent
-
-# Wrapping
 set softwrap
 set atblanks
 
-# Syntac highlighting
-include "/usr/share/nano/*.nanorc"
+# -- Colors
+set numbercolor     brightblack,normal  # numbers
+set minicolor       blue,normal         # minibar
+set spotlightcolor  white,blue          # searching
+set selectedcolor   white,black         # highlighting
+set promptcolor     blue,black          # prompt
+set statuscolor     white,blue          # messages
+set errorcolor      white,red           # error messages
+set keycolor        brightblack,normal  # keyboard shortcuts
+set functioncolor   blue,normal         # keyboard shortcuts actions
 
-# Colors
-set numbercolor     gray,normal  # numbers
-set minicolor       blue,normal  # minibar
-set spotlightcolor  white,blue   # searching
-set selectedcolor   white,black  # highlighting
-set promptcolor     blue,black   # prompt
-set statuscolor     white,blue   # messages
-set errorcolor      white,red    # error messages
-set keycolor        blue,normal  # keyboard shortcuts
-set functioncolor   blue,normal  # keyboard shortcuts actions
-
-# Keybindings
-bind ^F right all
-bind M-F nextword all
-bind ^B left all
-bind M-B prevword all
+# -- Keybindings
+bind ^F forward main
+bind M-F nextword main
+bind ^B back main
+bind M-B prevword main
+bind ^Z suspend main
+bind M-^ "{execute}|| printf "\033]52;c;%s\007" "$(base64 | tr -d '\n')" {enter}{undo}" main

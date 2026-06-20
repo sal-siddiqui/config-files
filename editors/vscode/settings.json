@@ -7,7 +7,7 @@
   // Jinja: wholroyd.jinja, noxiz.jinja-snippets, monosans.djlint
   // JavaScript: dbaeumer.vscode-eslint
   // Bash: timonwong.shellcheck, mads-hartmann.bash-ide-vscode
-  // Docker: docker.docker
+  // Docker: docker.docker, exiasr.hadolint
 
   // Editor
   "editor.fontFamily": "Code New Roman",
@@ -88,5 +88,6 @@
 
   "bashIde.shellcheckPath": "shellcheck.exe",
   "bashIde.shfmt.path": "shfmt.exe",
-  "bashIde.shfmt.caseIndent": true
+  "bashIde.shfmt.caseIndent": true,
+  "bashIde.shfmt.spaceRedirects": true
 }

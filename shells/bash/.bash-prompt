@@ -3,38 +3,49 @@ function is_git_repo() {
 	return $?
 }
 
+# Returns <branch>[*][+]
+# If detached, branch is replaced with commit hash
+# * -> Working directory is not clean
+# + -> Staging area is not clean
 function get_git_branch() {
 	local branch=$(git.exe branch --show-current)
 
 	# Handle detached state
 	[[ -z $branch ]] && branch=$(git.exe rev-parse --short HEAD)
 
-	echo "$branch"
+	#	local staged unstaged line
+	#	while IFS='\n' read -r line; do
+	#		[[ ${line:0:1} != " " ]] && staged="+"
+	#		[[ ${line:1:1} != " " ]] && unstaged="*"
+	#	done < <(git.exe status --porcelain 2> /dev/null)
+
+	local staged unstaged
+	git.exe diff --quiet || staged="*"            # WD dirty
+	git.exe diff --staged --quiet || unstaged="+" # Changes to be commited
+
+	echo "${branch}${unstaged}${staged}"
 }
 
 function get_kube_context() {
 	local cluster='.contexts[0].context.cluster'
 	local namespace='.contexts[0].context.namespace'
 
-	echo $(kubectl.exe config view \
-				--minify \
-				--output="jsonpath={${cluster}}/{${namespace}}" \
-				2> /dev/null
-				)
+	kubectl.exe \
+		--minify \
+		--output="jsonpath={${cluster}}/{${namespace}}" \
+		config view 2> /dev/null
 }
 
 function get_PS1() {
-	local user_host='\u@\h' current_dir='\W' extras=() extras_str=''
+	local user_host='\u@\h' current_dir='\w' extras=() extras_str=''
 
-	is_git_repo && extras+=( "$(get_git_branch)" )
-	(( KUBERNETES == 1 )) && extras+=( "$(get_kube_context)" )
+	is_git_repo && extras+=("$(get_git_branch)")
+	((KUBERNETES == 1)) && extras+=("$(get_kube_context)")
 
-	if (( ${#extras[@]} )); then
-		printf -v extras_str ' (%s)' "$(
-			IFS=','
-			echo "${extras[*]}"
-		)"
-		extras_str="${extras_str//,/, }"
+	if ((${#extras[@]})); then
+		local IFS=','
+		extras_str="${extras[*]}"
+		extras_str=" (${extras_str//,/, })"
 	fi
 
 	local blue='\[\e[34m\]' cyan='\[\e[36m\]' reset='\[\e[m\]'

@@ -6,8 +6,18 @@
     "when": "editorFocus"
   },
   {
+    "key": "ctrl+numpad2",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+  },
+  {
     "key": "ctrl+shift+j",
     "command": "workbench.action.quickOpenTerm",
     "when": "!inSearchEditor && !searchViewletFocus"
+  },
+  {
+    "key": "ctrl+numpad3",
+    "command": "acceptSelectedSuggestion",
+    "when": "acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
   }
 ]

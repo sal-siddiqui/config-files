@@ -4,37 +4,15 @@ function ff() {
 	local find_args=()
 	local pattern
 	for pattern in "$@"; do
-		find_args+=( -iname "*$pattern*" -o )
+		find_args+=(-iname "*$pattern*" -o)
 	done
 	unset 'find_args[${#find_args[@]}-1]' # remove last '-o'
 
 	find . -type f '(' "${find_args[@]}" ')' 2> /dev/null
 }
 
-function fstr() {
-	local is_case_insensitive=0
-
-	OPTIND=1
-	while getopts ':i' opt; do
-		case "$opt" in
-			i) is_case_insensitive=1 ;;
-		esac
-	done
-	shift $(( $OPTIND - 1 ))
-
-	(($# < 1)) && return 1
-
-	local text=$1
-	local file_pattern=${2:-*}
-	local grep_opts=(-sHn --color=auto)
-	((is_case_insensitive)) && grep_opts+=(-i)
-
-	find . -type f -iname "$file_pattern" -exec \
-		grep "${grep_opts[@]}" "$text" {} +
-}
-
 function fcd() {
-	local dir=$(find . -type d -print 2> /dev/null | fzf.exe --prompt='cd ')
+	local dir=$(find . -mindepth 1 -type d -name '.*' -prune -o -type d -print 2> /dev/null | fzf.exe --prompt='cd ')
 	[[ -n $dir ]] && cd "$dir"
 }
 
@@ -43,12 +21,81 @@ function fnano() {
 	[[ -n $files ]] && nano $files
 }
 
-function hl () {
+function hl() {
 	local IFS='|'
 	local pattern="$*"
 	grep --color=always -E "$|${pattern}"
 }
 
-function ke() {
-	kubectl.exe events --for="$*"
+# dl <resource>
+# List docker resources in an opioniated format
+function dl() {
+
+	local resource format
+	case "$1" in
+		i)
+			resource='image'
+			format='table {{.Repository}}:{{.Tag}}\t{{.Containers}}\t{{.Size}}'
+			;;
+		c)
+			resource='container'
+			format='table {{.Names}}\t{{.Image}}\t{{upper .State}}\t{{.Networks}}\t{{.Ports}}'
+			;;
+		*)
+			echo 'Usage: dl <resource>'
+			echo '  i --> images'
+			echo '  c --> containers'
+			return 1
+			;;
+	esac
+
+	docker "$resource" list --all --format "$format"
+}
+
+# kl [-n namespace] <resource...>
+# Wrapper for kubectl.exe get
+function kl() {
+
+	local namespace
+	while :; do
+		case "$1" in
+			'-n')
+				namespace=$2
+				shift
+				;;
+			*)
+				break
+				;;
+		esac
+		shift
+	done
+
+	if (($# == 0)); then
+		echo 'Usage: kl [-n namespace] <resource...>'
+		echo '  p  --> pods'
+		echo '  d  --> deployments'
+		echo '  s  --> services'
+		return 1
+	fi
+
+	local -A resource_map=(
+		[p]=pods [pods]=pods
+		[d]=deployments [deployments]=deployments
+		[s]=services [services]=services
+	)
+
+	local resources=()
+	while (($#)); do
+		resources+=("${resource_map[$1]}")
+		shift
+	done
+
+	local IFS=','
+	local resources_str="${resources[*]}"
+
+	if [[ -n $namespace ]]; then
+		kubectl.exe get --namespace "$namespace" "$resources_str"
+	else
+		kubectl.exe get "$resources_str"
+	fi
 }

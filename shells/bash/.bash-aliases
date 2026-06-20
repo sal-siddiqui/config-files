@@ -2,7 +2,7 @@
 alias c='clear'
 
 alias l='ls --color --classify'
-alias ll='l -l'
+alias ll='l -l --human-readable'
 alias la='l --almost-all'
 
 # Git
@@ -12,25 +12,21 @@ alias gl='git.exe log --all --graph --pretty=format:\
 alias gb='git.exe branch -vv --all'
 
 # Docker & Kubernetes
-alias d='docker.exe'
-alias dl='docker ps -a --format \
-"table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Networks}}\t{{.Status}}"'
+alias dk='docker.exe'
 alias mk='minikube.exe'
 alias kc='kubectl.exe'
-alias kl='kubectl.exe get services,deployments,statefulsets'
-alias kw='watch kubectl.exe get'
 
 # Navigation
-function popd() { builtin popd >/dev/null; }
+function popd() { builtin popd > /dev/null; }
+alias back='popd'
+
 function pushd() {
 	if (($# == 0)); then
-		builtin pushd "$HOME" >/dev/null
+		builtin pushd "$HOME" > /dev/null
 	elif [[ $1 == "-" ]]; then
-		builtin popd >/dev/null
+		builtin popd > /dev/null
 	else
-		builtin pushd "$1" >/dev/null
+		builtin pushd "$1" > /dev/null
 	fi
 }
-
 alias cd='pushd'
-alias back='popd'

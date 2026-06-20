@@ -1,0 +1,29 @@
+## Syntax highlighting for Dockerfiles
+syntax "Dockerfile" "Dockerfile[^/]*$"
+
+## Keywords
+icolor blue "^(FROM|MAINTAINER|RUN|CMD|LABEL|EXPOSE|ENV|ADD|COPY|ENTRYPOINT|VOLUME|USER|WORKDIR|ONBUILD|ARG)[[:space:]]"
+
+## Brackets & parenthesis
+color cyan "(\(|\)|\[|\])"
+
+## Double ampersand
+color cyan "&&"
+
+## Comments
+icolor cyan "^[[:space:]]*#.*$"
+
+## Blank space at EOL
+color ,red "[[:space:]]+$"
+
+## Strings, single-quoted
+color yellow "'([^']|(\\'))*'" "%[qw]\{[^}]*\}" "%[qw]\([^)]*\)" "%[qw]<[^>]*>" "%[qw]\[[^]]*\]" "%[qw]\$[^$]*\$" "%[qw]\^[^^]*\^" "%[qw]![^!]*!"
+
+## Strings, double-quoted
+color yellow ""([^"]|(\\"))*"" "%[QW]?\{[^}]*\}" "%[QW]?\([^)]*\)" "%[QW]?<[^>]*>" "%[QW]?\[[^]]*\]" "%[QW]?\$[^$]*\$" "%[QW]?\^[^^]*\^" "%[QW]?![^!]*!"
+
+## Single and double quotes
+color yellow "('|\")"
+
+## Addons
+color cyan "EOF"
