@@ -17,8 +17,12 @@ function fcd() {
 }
 
 function fnano() {
-	local files=$(find . -type f 2> /dev/null | fzf.exe --multi --prompt='nano ')
-	[[ -n $files ]] && nano $files
+	local files
+	readarray -t files < <(
+		find . -type f 2> /dev/null |
+			fzf.exe --multi --prompt='nano '
+	)
+	(("${#files[@]}" != 0)) && nano "${files[@]}"
 }
 
 function hl() {
@@ -30,7 +34,6 @@ function hl() {
 # dl <resource>
 # List docker resources in an opioniated format
 function dl() {
-
 	local resource format
 	case "$1" in
 		i)
@@ -49,19 +52,21 @@ function dl() {
 			;;
 	esac
 
-	docker "$resource" list --all --format "$format"
+	docker.exe "$resource" list --all --format "$format"
 }
 
-# kl [-n namespace] <resource...>
+# kl [-n namespace] [-w] <resource...>
 # Wrapper for kubectl.exe get
 function kl() {
-
-	local namespace
+	local namespace watch_mode
 	while :; do
 		case "$1" in
 			'-n')
 				namespace=$2
 				shift
+				;;
+			'-w' | --watch)
+				watch_mode="watch_mode"
 				;;
 			*)
 				break
@@ -71,7 +76,7 @@ function kl() {
 	done
 
 	if (($# == 0)); then
-		echo 'Usage: kl [-n namespace] <resource...>'
+		echo 'Usage: kl [-n namespace] [-w|--watch] <resource...>'
 		echo '  p  --> pods'
 		echo '  d  --> deployments'
 		echo '  s  --> services'
@@ -93,9 +98,9 @@ function kl() {
 	local IFS=','
 	local resources_str="${resources[*]}"
 
-	if [[ -n $namespace ]]; then
-		kubectl.exe get --namespace "$namespace" "$resources_str"
+	if [[ -n $watch_mode ]]; then
+		watch "kubectl.exe get --namespace=$namespace $resources_str"
 	else
-		kubectl.exe get "$resources_str"
+		kubectl.exe get --namespace="$namespace" "$resources_str"
 	fi
 }

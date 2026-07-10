@@ -1,0 +1,95 @@
+{
+  // --- List of dependencies ---
+  // Themes: 3ash.nord-flat, PKief.material-icon-theme
+  // Tools: esbenp.prettier-vscode, formulahendry.code-runner, usernamehw.errorlens, ms-vscode-remote.remote-wsl, ms-vscode-remote.remote-containers
+  // Python: ms-python.python, charliermarsh.ruff
+  // HTML: vincaslt.highlight-matching-tag, anteprimorac.html-end-tag-labels
+  // Jinja: wholroyd.jinja, noxiz.jinja-snippets, monosans.djlint
+  // JavaScript: dbaeumer.vscode-eslint
+  // Bash: timonwong.shellcheck, mads-hartmann.bash-ide-vscode
+  // Docker: docker.docker, exiasr.hadolint
+
+  // --- Editor ---
+  "editor.fontFamily": "Code New Roman",
+  "editor.fontSize": 16,
+  "editor.guides.indentation": false,
+  "editor.insertSpaces": false,
+  "editor.lineHeight": 2,
+  "editor.minimap.enabled": false,
+  "editor.occurrencesHighlight": "off",
+  "editor.selectionHighlight": false,
+  "editor.stickyScroll.enabled": false,
+  // "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.overviewRulerBorder": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  "editor.showFoldingControls": "never",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
+  "editor.glyphMargin": false,
+
+  // --- Workbench ---
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.enablePreview": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.statusBar.visible": false,
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Nord Flat",
+  "workbench.colorCustomizations": {
+    "[Nord Flat]": {
+      "list.hoverBackground": "#3b4252",
+      "editor.selectionBackground": "#3b4252",
+      "editorHoverWidget.border": "#4c566a",
+      "quickInputList.focusForeground": "#88c0d0",
+      "editorWhitespace.foreground": "#88c0d0",
+      "editorMarkerNavigation.background": "#0000"
+    }
+  },
+
+  // "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  "window.menuBarVisibility": "toggle",
+  "window.commandCenter": false,
+
+  "zenMode.centerLayout": false,
+  "zenMode.hideLineNumbers": false,
+
+  "breadcrumbs.enabled": false,
+
+  "git.decorations.enabled": false,
+  "scm.diffDecorations": "none",
+
+  // File Explorer
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.tree.enableStickyScroll": false,
+  "material-icon-theme.folders.theme": "classic",
+  "material-icon-theme.hidesExplorerArrows": true,
+
+  // Terminal
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.lineHeight": 1.5,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.initialHint": false,
+
+  // Languages
+  "[json][jsonc][yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Extensions
+  "errorLens.messageBackgroundMode": "none",
+
+  "bashIde.shellcheckPath": "shellcheck.exe",
+  "bashIde.shfmt.path": "shfmt.exe",
+  "bashIde.shfmt.caseIndent": true,
+  "bashIde.shfmt.spaceRedirects": true
+}

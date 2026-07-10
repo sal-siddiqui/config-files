@@ -9,7 +9,7 @@
   // Bash: timonwong.shellcheck, mads-hartmann.bash-ide-vscode
   // Docker: docker.docker, exiasr.hadolint
 
-  // Editor
+  // --- Editor ---
   "editor.fontFamily": "Code New Roman",
   "editor.fontSize": 16,
   "editor.guides.indentation": false,
@@ -29,14 +29,16 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": "always"
   },
+  "editor.glyphMargin": false,
 
-  "workbench.colorTheme": "Nord Flat",
+  // --- Workbench ---
   "workbench.activityBar.location": "hidden",
   "workbench.editor.enablePreview": false,
   "workbench.layoutControl.enabled": false,
   "workbench.sideBar.location": "right",
   "workbench.statusBar.visible": false,
   "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Nord Flat",
   "workbench.colorCustomizations": {
     "[Nord Flat]": {
       "list.hoverBackground": "#3b4252",
