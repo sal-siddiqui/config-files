@@ -29,14 +29,15 @@ function kube::get_info() {
 	kubectl.exe \
 		--minify \
 		--output="jsonpath={${cluster}}/{${namespace}}" \
-		config view 2> /dev/null
+		config view 2>/dev/null
 }
 
 function get_PS1() {
-	local user_host="\u@\h" current_dir="\w" extras=()
+	local  user_host="\u@\h" current_dir="\w" extras=() status_code=$?
 
-	git::is_repo        && extras+=( "$(git::get_info)" )
-	((KUBERNETES == 1)) && extras+=( "$(kube::get_info)" )
+	(( status_code != 0 ))    && extras+=( "$status_code"  )
+	git::is_repo              && extras+=( "$(git::get_info)" )
+	((KUBERNETES == 1))       && extras+=( "$(kube::get_info)" )
 
 	local extras_str
 	if (( ${#extras[@]} )); then
@@ -45,11 +46,11 @@ function get_PS1() {
 		extras_str=" (${extras_str//,/, })"
 	fi
 
-	local blue="\[\e[34m\]" cyan="\[\e[36m\]" reset="\[\e[m\]"
+	local yellow="\[\e[37m\]" gray="\[\e[90m\]" reset="\[\e[m\]"
 
-	user_host="${blue}${user_host}${reset}"
-	current_dir="${blue}${current_dir}${reset}"
-	[[ -n $extras_str ]] && extras_str="${cyan}${extras_str}${reset}"
+	user_host="${yellow}${user_host}${reset}"
+	current_dir="${yellow}${current_dir}${reset}"
+	[[ -n $extras_str ]] && extras_str="${gray}${extras_str}${reset}"
 
 	printf "\n%s %s%s\n\$ " "$user_host" "$current_dir" "$extras_str"
 }

@@ -1,106 +1,124 @@
-function ff() {
-	(($# < 1)) && return 1
-
-	local find_args=()
-	local pattern
-	for pattern in "$@"; do
-		find_args+=(-iname "*$pattern*" -o)
-	done
-	unset 'find_args[${#find_args[@]}-1]' # remove last '-o'
-
-	find . -type f '(' "${find_args[@]}" ')' 2> /dev/null
-}
-
+# fcd <dir>
+# Search for a directory fuzzily and `cd` into it
 function fcd() {
-	local dir=$(find . -mindepth 1 -type d -name '.*' -prune -o -type d -print 2> /dev/null | fzf.exe --prompt='cd ')
+	local dir
+	dir=$(
+		find . -type d -not -path '*/.*' -print 2> /dev/null |
+			fzf.exe --prompt='cd '
+	) || return 1
 	[[ -n $dir ]] && cd "$dir"
 }
 
+# fnano <file...>
+# Search for files fuzzily and open them with nano
 function fnano() {
-	local files
-	readarray -t files < <(
+	local files=()
+	mapfile -t files < <(
 		find . -type f 2> /dev/null |
 			fzf.exe --multi --prompt='nano '
 	)
-	(("${#files[@]}" != 0)) && nano "${files[@]}"
+
+	((${#files[@]})) && nano -- "${files[@]}"
 }
 
+# hl <pattern...>
+# Highlight patterns from the input stream
 function hl() {
-	local IFS='|'
-	local pattern="$*"
-	grep --color=always -E "$|${pattern}"
+	local pattern
+	pattern=$(printf '%s|' "$@")
+	pattern="${pattern%|}"
+
+	# The first "$" will match every line but not color it
+	GREP_COLORS="mt=43" grep --color=always -E "${pattern}|$"
 }
 
 # dl <resource>
 # List docker resources in an opioniated format
 function dl() {
-	local resource format
+	local format
+	local -A resource_map
+	local -a cmd
+
+	cmd=(docker)
+	resource_map=(
+		[i]=image
+		[c]=container
+	)
+
 	case "$1" in
 		i)
-			resource='image'
 			format='table {{.Repository}}:{{.Tag}}\t{{.Containers}}\t{{.Size}}'
+			cmd+=("${resource_map[$1]}" list --all --format "$format")
 			;;
 		c)
-			resource='container'
 			format='table {{.Names}}\t{{.Image}}\t{{upper .State}}\t{{.Networks}}\t{{.Ports}}'
+			cmd+=("${resource_map[$1]}" list --all --format "$format")
 			;;
 		*)
 			echo 'Usage: dl <resource>'
-			echo '  i --> images'
-			echo '  c --> containers'
+			echo '  i -- images'
+			echo '  c -- containers'
 			return 1
 			;;
 	esac
 
-	docker.exe "$resource" list --all --format "$format"
+	"${cmd[@]}"
 }
 
-# kl [-n namespace] [-w] <resource...>
-# Wrapper for kubectl.exe get
+# kl <resource...> [-n namespace]
+# Wrapper for `kubectl get`
 function kl() {
-	local namespace watch_mode
-	while :; do
+	if (($# == 0)); then
+		echo 'Usage: kl <resource...> [-n namespace]'
+		echo '  p   --- Pod'
+		echo '  d   --- Deployment'
+		echo '  s   --- Service'
+		echo '  sts --- StatefulSet'
+		echo '  ds  --- DaemonSet'
+		return 1
+	fi
+
+	local -A resource_map=(
+		[p]=pods
+		[d]=deployment
+		[s]=service
+		[sts]=statefulset
+		[ds]=daemonset
+	)
+	local resources=()
+	local namespace
+
+	while (($#)); do
 		case "$1" in
-			'-n')
+			-n)
 				namespace=$2
 				shift
 				;;
-			'-w' | --watch)
-				watch_mode="watch_mode"
-				;;
 			*)
-				break
+				if [[ -v "resource_map[$1]" ]]; then
+					resources+=("${resource_map[$1]}")
+				else
+					printf "ERROR: Unknown resource: %s\n" "$1" >&2
+					return 1
+				fi
 				;;
 		esac
 		shift
 	done
 
-	if (($# == 0)); then
-		echo 'Usage: kl [-n namespace] [-w|--watch] <resource...>'
-		echo '  p  --> pods'
-		echo '  d  --> deployments'
-		echo '  s  --> services'
+	if (( ${#resources[@]} == 0 )); then
+		echo "ERROR: No resources specified" >&2
 		return 1
 	fi
 
-	local -A resource_map=(
-		[p]=pods [pods]=pods
-		[d]=deployments [deployments]=deployments
-		[s]=services [services]=services
-	)
+	local resource_list cmd=() IFS=,
 
-	local resources=()
-	while (($#)); do
-		resources+=("${resource_map[$1]}")
-		shift
-	done
+	resource_list="${resources[*]}"; unset IFS
+	cmd=(kubectl.exe get "$resource_list")
 
-	local IFS=','
-	local resources_str="${resources[*]}"
-
-	if [[ -n $watch_mode ]]; then
-		watch "kubectl.exe get --namespace=$namespace $resources_str"
-	else
-		kubectl.exe get --namespace="$namespace" "$resources_str"
+	if [[ -n $namespace ]]; then
+		cmd+=(--namespace "$namespace")
 	fi
+
+	"${cmd[@]}"
 }

@@ -10,8 +10,8 @@
   // Docker: docker.docker, exiasr.hadolint
 
   // --- Editor ---
-  "editor.fontFamily": "Code New Roman",
-  "editor.fontSize": 16,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 15,
   "editor.guides.indentation": false,
   "editor.insertSpaces": false,
   "editor.lineHeight": 2,
@@ -30,6 +30,7 @@
     "source.organizeImports": "always"
   },
   "editor.glyphMargin": false,
+  "editor.bracketPairColorization.enabled": false,
 
   // --- Workbench ---
   "workbench.activityBar.location": "hidden",
@@ -38,15 +39,17 @@
   "workbench.sideBar.location": "right",
   "workbench.statusBar.visible": false,
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Nord Flat",
+  "workbench.colorTheme": "Dark- (Visual Studio) (Flat UI)",
+
+  // --- Colors ---
   "workbench.colorCustomizations": {
-    "[Nord Flat]": {
-      "list.hoverBackground": "#3b4252",
-      "editor.selectionBackground": "#3b4252",
-      "editorHoverWidget.border": "#4c566a",
-      "quickInputList.focusForeground": "#88c0d0",
-      "editorWhitespace.foreground": "#88c0d0",
-      "editorMarkerNavigation.background": "#0000"
+    "[Dark- (Visual Studio) (Flat UI)]": {
+      "terminal.background": "#1e1e1e",
+      "panel.background": "#1e1e1e",
+      "sideBar.background": "#1e1e1e",
+      "sideBar.border": "#0000",
+      "panel.border": "#0000",
+      "scrollbar.shadow": "#0000"
     }
   },
 

@@ -1,22 +1,19 @@
 # Common
 alias c='clear'
 
-alias l='ls --color --classify'
+alias l='ls --almost-all --color --classify'
 alias ll='l -l --human-readable'
-alias la='l --almost-all'
-
-alias pl='ps -o pid,ppid,etime,%cpu,%mem,user=USER,stat=STATE,args'
 
 # Git
 alias gs='git.exe status --short'
 alias gl='git.exe log --all --graph --pretty=format:\
-"%C(blue)%h %C(brightblack)%an %ar %C(blue)%D%C(reset)%n%s%n"'
-alias gb='git.exe branch -vv'
+"%C(yellow)%h %C(white)%an %ar %C(yellow)%D%C(reset)%n%s%n"'
+alias gb='git.exe branch -vv --all'
 
 # Docker & Kubernetes
-alias d='docker.exe'
-alias m='minikube.exe'
-alias k='kubectl.exe'
+alias dk='docker.exe'
+alias mk='minikube.exe'
+alias kc='kubectl.exe'
 
 # Navigation
 function popd() { builtin popd > /dev/null; }

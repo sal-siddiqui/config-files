@@ -1,0 +1,27 @@
+{
+  "name": "Silentium",
+
+  "foreground": "#E6E6E6",
+  "background": "#141414",
+
+  "selectionBackground": "#FFFFFF",
+  "cursorColor": "#FFFFFF",
+
+  "black": "#737373",
+  "red": "#F64E4E",
+  "green": "#5FB36A",
+  "yellow": "#F6CE4E",
+  "blue": "#5B82C7",
+  "purple": "#E57AA4",
+  "cyan": "#64B8B4",
+  "white": "#E6E6E6",
+
+  "brightBlack": "#737373",
+  "brightRed": "#FF6A6A",
+  "brightGreen": "#7AD48A",
+  "brightYellow": "#FFE07A",
+  "brightBlue": "#7FA2E6",
+  "brightPurple": "#F29BC1",
+  "brightCyan": "#7FD9D4",
+  "brightWhite": "#FFFFFF"
+}
