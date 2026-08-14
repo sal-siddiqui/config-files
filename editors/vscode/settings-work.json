@@ -1,6 +1,6 @@
 {
-  // --- List of dependencies ---
-  // Themes: 3ash.nord-flat, PKief.material-icon-theme
+  // -- List of dependencies
+  // Themes: theNestruo.dark-minus-theme, PKief.material-icon-theme
   // Tools: esbenp.prettier-vscode, formulahendry.code-runner, usernamehw.errorlens, ms-vscode-remote.remote-wsl, ms-vscode-remote.remote-containers
   // Python: ms-python.python, charliermarsh.ruff
   // HTML: vincaslt.highlight-matching-tag, anteprimorac.html-end-tag-labels
@@ -8,9 +8,10 @@
   // JavaScript: dbaeumer.vscode-eslint
   // Bash: timonwong.shellcheck, mads-hartmann.bash-ide-vscode
   // Docker: docker.docker, exiasr.hadolint
+  // SQL: adpyke.vscode-sql-formatter
 
-  // --- Editor ---
-  "editor.fontFamily": "JetBrains Mono",
+  // -- Editor
+  "editor.fontFamily": "Consolas",
   "editor.fontSize": 15,
   "editor.guides.indentation": false,
   "editor.insertSpaces": false,
@@ -27,7 +28,6 @@
   "editor.showFoldingControls": "never",
   "editor.glyphMargin": false,
   "editor.bracketPairColorization.enabled": false,
-  "files.trimTrailingWhitespace": true,
   "chat.disableAIFeatures": true,
   "window.commandCenter": false,
   "zenMode.centerLayout": false,
@@ -35,11 +35,12 @@
   "breadcrumbs.enabled": false,
   "git.decorations.enabled": false,
   "scm.diffDecorations": "none",
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "always",
+    "source.organizeImports": "always"
   },
-
-  // --- Workbench ---
   "workbench.activityBar.location": "hidden",
   "workbench.editor.enablePreview": false,
   "workbench.layoutControl.enabled": false,
@@ -54,18 +55,16 @@
       "sideBar.background": "#1e1e1e",
       "sideBar.border": "#0000",
       "panel.border": "#0000",
-      "scrollbar.shadow": "#0000",
-    },
+      "scrollbar.shadow": "#0000"
+    }
   },
-
-  // --- File Explorer ---
   "workbench.iconTheme": "material-icon-theme",
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.enableStickyScroll": false,
   "material-icon-theme.folders.theme": "classic",
   "material-icon-theme.hidesExplorerArrows": true,
 
-  // --- Terminal ---
+  // -- Terminal
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.lineHeight": 1.5,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
@@ -74,15 +73,18 @@
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.initialHint": false,
 
-  // --- Languages ---
+  // -- Languages
   "[json][jsonc][yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  // --- Extensions ---
+  // -- Extensions
   "errorLens.messageBackgroundMode": "none",
   "bashIde.shellcheckPath": "shellcheck.exe",
   "bashIde.shfmt.path": "shfmt.exe",
   "bashIde.shfmt.caseIndent": true,
   "bashIde.shfmt.spaceRedirects": true,
+  "sql-formatter.dialect": "pl/sql",
+  "sql-formatter.uppercase": true,
+  "sql-formatter.linesBetweenQueries": 2
 }

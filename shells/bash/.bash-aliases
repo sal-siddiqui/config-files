@@ -1,31 +1,10 @@
-# Common
-alias c='clear'
-
-alias l='ls --almost-all --color --classify'
-alias ll='l -l --human-readable'
-
 # Git
 alias gs='git.exe status --short'
-alias gl='git.exe log --all --graph --pretty=format:\
-"%C(yellow)%h %C(white)%an %ar %C(yellow)%D%C(reset)%n%s%n"'
 alias gb='git.exe branch -vv --all'
+alias gl='git.exe log --graph \
+  --pretty=format:"%C(yellow)%h %C(white)%an %ar %C(yellow)%D%C(reset)%n%s%n"'
 
-# Docker & Kubernetes
+# Kubernetes
 alias dk='docker.exe'
 alias mk='minikube.exe'
 alias kc='kubectl.exe'
-
-# Navigation
-function popd() { builtin popd > /dev/null; }
-alias back='popd'
-
-function pushd() {
-	if (($# == 0)); then
-		builtin pushd "$HOME" > /dev/null
-	elif [[ $1 == "-" ]]; then
-		builtin popd > /dev/null
-	else
-		builtin pushd "$1" > /dev/null
-	fi
-}
-alias cd='pushd'

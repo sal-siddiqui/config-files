@@ -3,10 +3,10 @@
 function fcd() {
 	local dir
 	dir=$(
-		find . -type d -not -path '*/.*' -print 2> /dev/null |
-			fzf.exe --prompt='cd '
-	) || return 1
-	[[ -n $dir ]] && cd "$dir"
+		find . -type d -not -path '*/.*' -print 2> /dev/null \
+			| fzf.exe --prompt='cd '
+	)
+	[[ -n $dir ]] && cd -- "$dir" || return 1
 }
 
 # fnano <file...>
@@ -14,8 +14,8 @@ function fcd() {
 function fnano() {
 	local files=()
 	mapfile -t files < <(
-		find . -type f 2> /dev/null |
-			fzf.exe --multi --prompt='nano '
+		find . -type f 2> /dev/null \
+			| fzf.exe --multi --prompt='nano '
 	)
 
 	((${#files[@]})) && nano -- "${files[@]}"
@@ -39,7 +39,7 @@ function dl() {
 	local -A resource_map
 	local -a cmd
 
-	cmd=(docker)
+	cmd=(docker.exe)
 	resource_map=(
 		[i]=image
 		[c]=container
@@ -68,25 +68,31 @@ function dl() {
 # kl <resource...> [-n namespace]
 # Wrapper for `kubectl get`
 function kl() {
-	if (($# == 0)); then
-		echo 'Usage: kl <resource...> [-n namespace]'
-		echo '  p   --- Pod'
-		echo '  d   --- Deployment'
-		echo '  s   --- Service'
-		echo '  sts --- StatefulSet'
-		echo '  ds  --- DaemonSet'
-		return 1
-	fi
-
-	local -A resource_map=(
+		local -A resource_map=(
 		[p]=pods
 		[d]=deployment
 		[s]=service
+		[vs]=virtualservice
 		[sts]=statefulset
 		[ds]=daemonset
 	)
-	local resources=()
 	local namespace
+	local resource_list
+	local resources=()
+	local cmd=()
+
+	if (($# == 0)); then
+		echo 'Usage: kl <resource...> [-n namespace]'
+		for key in "${!resource_map[@]}"; do
+			printf '  %-3s -- %s\n' "$key" "${resource_map[$key]}"
+		done
+		# echo '  p   --- Pod'
+		# echo '  d   --- Deployment'
+		# echo '  s   --- Service'
+		# echo '  sts --- StatefulSet'
+		# echo '  ds  --- DaemonSet'
+		return 1
+	fi
 
 	while (($#)); do
 		case "$1" in
@@ -111,9 +117,9 @@ function kl() {
 		return 1
 	fi
 
-	local resource_list cmd=() IFS=,
 
-	resource_list="${resources[*]}"; unset IFS
+	printf -v resource_list "%s," "${resources[@]}"
+	resource_list=${resource_list%,}
 	cmd=(kubectl.exe get "$resource_list")
 
 	if [[ -n $namespace ]]; then

@@ -35,9 +35,10 @@ function kube::get_info() {
 function get_PS1() {
 	local  user_host="\u@\h" current_dir="\w" extras=() status_code=$?
 
-	(( status_code != 0 ))    && extras+=( "$status_code"  )
-	git::is_repo              && extras+=( "$(git::get_info)" )
-	((KUBERNETES == 1))       && extras+=( "$(kube::get_info)" )
+	(( status_code != 0 ))       && extras+=( "$status_code"  )
+	[[ -n $VIRTUAL_ENV_PROMPT ]] && extras+=( "$VIRTUAL_ENV_PROMPT" )
+	git::is_repo                 && extras+=( "$(git::get_info)" )
+	((KUBERNETES == 1))          && extras+=( "$(kube::get_info)" )
 
 	local extras_str
 	if (( ${#extras[@]} )); then
