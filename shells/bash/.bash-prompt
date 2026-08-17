@@ -1,12 +1,14 @@
+# Returns whether the repository is
+# a Git repository or not
 function git::is_repo() {
 	git.exe status &> /dev/null
-	return $?
 }
 
 # Returns <branch>[*][+]
 # If detached, branch is replaced with commit hash
-# * -> Working directory is dirty
-# + -> Staging area has changes not yet committed
+# Symbols:
+#   - * -> Working directory is dirty
+#   - + -> Staging area has changes not yet committed
 function git::get_info() {
 	local branch=$(git.exe branch --show-current)
 
@@ -15,13 +17,14 @@ function git::get_info() {
 
 	local staged unstaged
 	{
-		git.exe diff --quiet           || staged="*"    # WD dirty
-		git.exe diff --quiet --staged  || unstaged="+"  # Changes to be committed
+		git.exe diff --quiet || staged="*"            # WD dirty
+		git.exe diff --quiet --staged || unstaged="+" # Changes to be committed
 	} 2> /dev/null
 
 	echo "${branch}${unstaged}${staged}"
 }
 
+# Returns cluster/namespace
 function kube::get_info() {
 	local cluster=".contexts[0].context.cluster"
 	local namespace=".contexts[0].context.namespace"
@@ -29,22 +32,24 @@ function kube::get_info() {
 	kubectl.exe \
 		--minify \
 		--output="jsonpath={${cluster}}/{${namespace}}" \
-		config view 2>/dev/null
+		config view 2> /dev/null
 }
 
+# Build PS1 variable
 function get_PS1() {
-	local  user_host="\u@\h" current_dir="\w" extras=() status_code=$?
+	local user_host="\u@\h" current_dir="\w" extras=() status_code=$?
 
-	(( status_code != 0 ))       && extras+=( "$status_code"  )
-	[[ -n $VIRTUAL_ENV_PROMPT ]] && extras+=( "$VIRTUAL_ENV_PROMPT" )
-	git::is_repo                 && extras+=( "$(git::get_info)" )
-	((KUBERNETES == 1))          && extras+=( "$(kube::get_info)" )
+	((status_code != 0)) && extras+=("$status_code")
+	[[ -n $VIRTUAL_ENV_PROMPT ]] && extras+=("$VIRTUAL_ENV_PROMPT")
+	git::is_repo && extras+=("$(git::get_info)")
+	((KUBERNETES == 1)) && extras+=("$(kube::get_info)")
 
 	local extras_str
-	if (( ${#extras[@]} )); then
-		local IFS=','
-		extras_str="${extras[*]}"
-		extras_str=" (${extras_str//,/, })"
+	if ((${#extras[@]})); then
+		printf -v extras_str "%s," "${extras[@]}"
+		extras_str="${extras_str%,}"
+		extras_str="${extras_str//,/, }"
+		extras_str=" ($extras_str)"
 	fi
 
 	local yellow="\[\e[37m\]" gray="\[\e[90m\]" reset="\[\e[m\]"

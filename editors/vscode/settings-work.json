@@ -24,7 +24,7 @@
   "editor.overviewRulerBorder": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 80,
+  "editor.wordWrapColumn": 100,
   "editor.showFoldingControls": "never",
   "editor.glyphMargin": false,
   "editor.bracketPairColorization.enabled": false,
@@ -35,9 +35,9 @@
   "breadcrumbs.enabled": false,
   "git.decorations.enabled": false,
   "scm.diffDecorations": "none",
-  "editor.formatOnSave": true,
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
+  "editor.formatOnSave": false,
+  "files.insertFinalNewline": false,
+  "files.trimTrailingWhitespace": false,
   "editor.codeActionsOnSave": {
     "source.organizeImports": "always"
   },

@@ -1,0 +1,21 @@
+# Syntax identifier
+syntax "yaml" "\.ya?ml$"
+
+# Tab gives spaces
+tabgives "  "
+
+# Keys
+color white "(^|\s+).*+\s*:(\s|$)"
+
+# Values
+color white "(:|^|\s)+\S+"
+
+# Separaters
+color white "^\s*-"
+color white ":(\s|$)"
+
+# Comments
+color gray "(^|[[:space:]])#.*$"
+
+# Trailing whitespace
+color ,red "[[:space:]]+$"
