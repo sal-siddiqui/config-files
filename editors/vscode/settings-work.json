@@ -11,7 +11,7 @@
   // SQL: adpyke.vscode-sql-formatter
 
   // -- Editor
-  "editor.fontFamily": "Consolas",
+  "editor.fontFamily": "Code New Roman",
   "editor.fontSize": 15,
   "editor.guides.indentation": false,
   "editor.insertSpaces": false,
@@ -26,7 +26,6 @@
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 100,
   "editor.showFoldingControls": "never",
-  "editor.glyphMargin": false,
   "editor.bracketPairColorization.enabled": false,
   "chat.disableAIFeatures": true,
   "window.commandCenter": false,
@@ -39,7 +38,7 @@
   "files.insertFinalNewline": false,
   "files.trimTrailingWhitespace": false,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "always"
+    "source.organizeImports": "always",
   },
   "workbench.activityBar.location": "hidden",
   "workbench.editor.enablePreview": false,
@@ -55,8 +54,8 @@
       "sideBar.background": "#1e1e1e",
       "sideBar.border": "#0000",
       "panel.border": "#0000",
-      "scrollbar.shadow": "#0000"
-    }
+      "scrollbar.shadow": "#0000",
+    },
   },
   "workbench.iconTheme": "material-icon-theme",
   "workbench.tree.renderIndentGuides": "none",
@@ -75,7 +74,7 @@
 
   // -- Languages
   "[json][jsonc][yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
   // -- Extensions
@@ -84,7 +83,4 @@
   "bashIde.shfmt.path": "shfmt.exe",
   "bashIde.shfmt.caseIndent": true,
   "bashIde.shfmt.spaceRedirects": true,
-  "sql-formatter.dialect": "pl/sql",
-  "sql-formatter.uppercase": true,
-  "sql-formatter.linesBetweenQueries": 2
 }

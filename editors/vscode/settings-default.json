@@ -1,6 +1,6 @@
 {
   // -- List of dependencies
-  // Themes: 3ash.nord-flat, PKief.material-icon-theme
+  // Themes: theNestruo.dark-minus-theme, PKief.material-icon-theme
   // Tools: esbenp.prettier-vscode, formulahendry.code-runner, usernamehw.errorlens, ms-vscode-remote.remote-wsl, ms-vscode-remote.remote-containers
   // Python: ms-python.python, charliermarsh.ruff
   // HTML: vincaslt.highlight-matching-tag, anteprimorac.html-end-tag-labels
@@ -23,7 +23,7 @@
   "editor.overviewRulerBorder": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 80,
+  "editor.wordWrapColumn": 100,
   "editor.showFoldingControls": "never",
   "editor.glyphMargin": false,
   "editor.bracketPairColorization.enabled": false,
@@ -34,14 +34,11 @@
   "breadcrumbs.enabled": false,
   "git.decorations.enabled": false,
   "scm.diffDecorations": "none",
-  "editor.formatOnSave": true,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "always"
+    "source.organizeImports": "always",
   },
-
-  // -- Workbench
   "workbench.activityBar.location": "hidden",
   "workbench.editor.enablePreview": false,
   "workbench.layoutControl.enabled": false,
@@ -56,16 +53,15 @@
       "sideBar.background": "#1e1e1e",
       "sideBar.border": "#0000",
       "panel.border": "#0000",
-      "scrollbar.shadow": "#0000"
-    }
+      "scrollbar.shadow": "#0000",
+    },
   },
-
-  // -- File Explorer
   "workbench.iconTheme": "material-icon-theme",
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.enableStickyScroll": false,
   "material-icon-theme.folders.theme": "classic",
   "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.externalBrowser": "firefox",
 
   // -- Terminal
   "terminal.integrated.fontSize": 15,
@@ -78,7 +74,7 @@
 
   // -- Languages
   "[json][jsonc][yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
   // -- Extensions
@@ -86,5 +82,5 @@
   "bashIde.shellcheckPath": "shellcheck.exe",
   "bashIde.shfmt.path": "shfmt.exe",
   "bashIde.shfmt.caseIndent": true,
-  "bashIde.shfmt.spaceRedirects": true
+  "bashIde.shfmt.spaceRedirects": true,
 }
