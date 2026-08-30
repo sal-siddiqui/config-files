@@ -1,28 +1,28 @@
 # Nano configuration file
 
-# -- Layout
+# --- Layout ---
 set linenumbers
 set minibar
 set nohelp
 
-# -- Editor
+# --- Editor ---
 set tabsize 2
 set autoindent
 set softwrap
 set atblanks
 
-# -- Colors
-set numbercolor     gray,normal    # numbers
-set minicolor       normal,normal  # minibar
-set spotlightcolor  black,white    # search
-set selectedcolor   white,black    # highlighting
-set promptcolor     white,normal   # prompt
-set statuscolor     black,white    # messages
-set errorcolor      black,white    # error messages
-set keycolor        gray,normal    # keyboard shortcuts
+# --- Colors ---
+set numbercolor     lightblack,normal # numbers
+set minicolor       normal,normal     # minibar
+set spotlightcolor  black,white       # search
+set selectedcolor   white,black       # highlighting
+set promptcolor     white,normal      # prompt
+set statuscolor     black,white       # messages
+set errorcolor      black,white       # error messages
+set keycolor        lightblack,normal # keyboard shortcuts
 set functioncolor   white,normal   # keyboard shortcuts actions
 
-# -- Keybindings
+# --- Keybindings ---
 bind ^F forward main
 bind M-F nextword main
 bind ^B back main
