@@ -1,21 +1,21 @@
 {
-  // -- List of dependencies
+  // -- Recommended extensions
   // Themes: theNestruo.dark-minus-theme, PKief.material-icon-theme
-  // Tools: esbenp.prettier-vscode, formulahendry.code-runner, usernamehw.errorlens, ms-vscode-remote.remote-wsl, ms-vscode-remote.remote-containers
+  // Errors: usernamehw.errorlens
+  // Running Code: formulahendry.code-runner
+  // Dev Containers: ms-vscode-remote.remote-containers
+  // HTML - CSS - JS: esbenp.prettier-vscode, vincaslt.highlight-matching-tag, anteprimorac.html-end-tag-labels
   // Python: ms-python.python, charliermarsh.ruff
-  // HTML: vincaslt.highlight-matching-tag, anteprimorac.html-end-tag-labels
   // Jinja: wholroyd.jinja, noxiz.jinja-snippets, monosans.djlint
-  // JavaScript: dbaeumer.vscode-eslint
   // Bash: timonwong.shellcheck, mads-hartmann.bash-ide-vscode
   // Docker: docker.docker, exiasr.hadolint
-  // SQL: adpyke.vscode-sql-formatter
+  // YAML: kennylong.kubernetes-yaml-formatter
 
   // -- Editor
   "editor.fontFamily": "Code New Roman",
   "editor.fontSize": 15,
   "editor.guides.indentation": false,
-  "editor.insertSpaces": false,
-  "editor.lineHeight": 2,
+  "editor.lineHeight": 2.0,
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
   "editor.selectionHighlight": false,
@@ -25,7 +25,6 @@
   "editor.hideCursorInOverviewRuler": true,
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 100,
-  "editor.showFoldingControls": "never",
   "editor.bracketPairColorization.enabled": false,
   "chat.disableAIFeatures": true,
   "window.commandCenter": false,
@@ -34,12 +33,6 @@
   "breadcrumbs.enabled": false,
   "git.decorations.enabled": false,
   "scm.diffDecorations": "none",
-  "editor.formatOnSave": false,
-  "files.insertFinalNewline": false,
-  "files.trimTrailingWhitespace": false,
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": "always",
-  },
   "workbench.activityBar.location": "hidden",
   "workbench.editor.enablePreview": false,
   "workbench.layoutControl.enabled": false,
@@ -50,10 +43,6 @@
   "workbench.colorCustomizations": {
     "[Dark- (Visual Studio) (Flat UI)]": {
       "terminal.background": "#1e1e1e",
-      "panel.background": "#1e1e1e",
-      "sideBar.background": "#1e1e1e",
-      "sideBar.border": "#0000",
-      "panel.border": "#0000",
       "scrollbar.shadow": "#0000",
     },
   },
@@ -62,25 +51,25 @@
   "workbench.tree.enableStickyScroll": false,
   "material-icon-theme.folders.theme": "classic",
   "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.externalBrowser": "firefox",
 
   // -- Terminal
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.lineHeight": 1.5,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.initialHint": false,
 
-  // -- Languages
-  "[json][jsonc][yaml]": {
+  // -- Extensions
+  "[json][jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-
-  // -- Extensions
+  "[yaml]": {
+    "editor.defaultFormatter": "kennylong.kubernetes-yaml-formatter",
+  },
   "errorLens.messageBackgroundMode": "none",
-  "bashIde.shellcheckPath": "shellcheck.exe",
-  "bashIde.shfmt.path": "shfmt.exe",
-  "bashIde.shfmt.caseIndent": true,
-  "bashIde.shfmt.spaceRedirects": true,
+
+  // Temporary fix - https://github.com/microsoft/vscode/issues/334167
+  "window.density.layout": "compact",
 }
