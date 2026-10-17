@@ -1,0 +1,32 @@
+{
+  "name": "PuTTY",
+
+  "background": "#000000",
+  "foreground": "#BBBBBB",
+  "selectionBackground": "#FFFFFF",
+  "cursorColor": "#FFFFFF",
+  
+  "black": "#000000",
+  "brightBlack": "#555555",
+  
+  "red": "#BB0000",
+  "brightRed": "#FF5555",
+  
+  "blue": "#0000BB",
+  "brightBlue": "#5555FF",
+  
+  "cyan": "#00BBBB",
+  "brightCyan": "#55FFFF",
+  
+  "green": "#00BB00",
+  "brightGreen": "#55FF55",
+  
+  "purple": "#BB00BB",
+  "brightPurple": "#FF55FF",
+  
+  "yellow": "#BBBB00",
+  "brightYellow": "#FFFF55",
+  
+  "white": "#BBBBBB",
+  "brightWhite": "#F2F2F2"
+}
